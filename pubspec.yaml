@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  font_awesome_flutter: ^10.6.0
   cupertino_icons: ^1.0.2
   google_fonts: ^6.1.0
 
@@ -27,3 +28,5 @@ flutter:
   assets:
     - ./lib/images/
     - ./lib/images/register/
+
+    - ./lib/images/register/providers/

@@ -24,9 +24,9 @@ class RegisterScreen extends StatelessWidget {
           color: Colors.black,
         ),
         child: const SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: 0,
-            vertical: 40,
+          padding: EdgeInsets.only(
+            bottom: 20,
+            top: 40,
           ),
           child: SafeArea(
             child: Column(

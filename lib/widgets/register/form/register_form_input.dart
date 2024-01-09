@@ -30,7 +30,7 @@ class RegisterFormInput extends StatelessWidget {
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 20,
-          vertical: 20,
+          vertical: 15,
         ),
         prefixIcon: Padding(
           padding: const EdgeInsets.only(
