@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pixel_flix/widgets/splash/splash_message.dart';
 
 import '../widgets/common/logo.dart';
 
-import '../widgets/register/register_form.dart';
-
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class RegisterScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              "./lib/images/register/background.png",
+              "./lib/images/splash/background.png",
             ),
             fit: BoxFit.cover,
             opacity: 0.8,
@@ -34,7 +33,13 @@ class RegisterScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Logo(),
-                RegisterForm(),
+                SizedBox(
+                  height: 240,
+                ),
+                SplashMessage(
+                  message: "EXPLORE EVERY PIXEL",
+                  quote: "Experience Visionary",
+                ),
               ],
             ),
           ),

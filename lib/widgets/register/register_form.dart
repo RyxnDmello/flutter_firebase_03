@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './form/register_form_title.dart';
 import './form/register_form_input.dart';
 import './form/register_form_button.dart';
 import './form/register_form_divider.dart';
@@ -25,13 +26,19 @@ class _RegisterFormState extends State<RegisterForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 100, 20, 40),
+      padding: const EdgeInsets.fromLTRB(20, 50, 20, 40),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            RegisterFormTitle(
+              title: _isLogin ? "Welcome Back" : "Create Your Account",
+            ),
+            const SizedBox(
+              height: 25,
+            ),
             if (!_isLogin)
               const RegisterFormInput(
                 label: "Username",
@@ -79,7 +86,7 @@ class _RegisterFormState extends State<RegisterForm> {
               onSwitch: _switchForm,
             ),
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
             const RegisterFormDivider(
               label: "OR",
@@ -87,15 +94,17 @@ class _RegisterFormState extends State<RegisterForm> {
             const SizedBox(
               height: 20,
             ),
-            const RegisterFormOAuth(
+            RegisterFormOAuth(
               image: "./lib/images/register/providers/google.png",
+              isLogin: _isLogin,
               name: "Google",
             ),
             const SizedBox(
               height: 15,
             ),
-            const RegisterFormOAuth(
+            RegisterFormOAuth(
               image: "./lib/images/register/providers/github.png",
+              isLogin: _isLogin,
               name: "GitHub",
             ),
           ],

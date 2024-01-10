@@ -28,5 +28,6 @@ flutter:
   assets:
     - ./lib/images/
     - ./lib/images/register/
+    - ./lib/images/splash/
 
     - ./lib/images/register/providers/

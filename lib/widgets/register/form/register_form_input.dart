@@ -46,7 +46,7 @@ class RegisterFormInput extends StatelessWidget {
           label,
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w400,
-            color: Colors.white,
+            color: Colors.white60,
             letterSpacing: 1,
             fontSize: 20,
           ),
