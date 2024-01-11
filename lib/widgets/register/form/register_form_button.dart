@@ -3,16 +3,18 @@ import 'package:google_fonts/google_fonts.dart';
 
 class RegisterFormButton extends StatelessWidget {
   const RegisterFormButton({
+    required this.onSubmit,
     required this.label,
     super.key,
   });
 
+  final void Function() onSubmit;
   final String label;
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: onSubmit,
       style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(
           horizontal: 0,

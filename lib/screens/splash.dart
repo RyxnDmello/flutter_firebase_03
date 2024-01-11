@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pixel_flix/widgets/splash/splash_message.dart';
 
 import '../widgets/common/logo.dart';
+
+import '../widgets/splash/splash_message.dart';
+import '../widgets/splash/splash_loader.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -40,6 +42,10 @@ class SplashScreen extends StatelessWidget {
                   message: "EXPLORE EVERY PIXEL",
                   quote: "Experience Visionary",
                 ),
+                SizedBox(
+                  height: 25,
+                ),
+                SplashLoader(),
               ],
             ),
           ),

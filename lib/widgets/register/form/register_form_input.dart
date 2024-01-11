@@ -3,13 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 
 class RegisterFormInput extends StatelessWidget {
   const RegisterFormInput({
+    required this.onValidate,
+    required this.inputType,
+    required this.onSave,
     required this.label,
     required this.icon,
     this.isPassword = false,
-    this.inputType = TextInputType.text,
     super.key,
   });
 
+  final String? Function(String? value) onValidate;
+  final void Function(String value) onSave;
   final TextInputType inputType;
   final bool isPassword;
   final IconData icon;
@@ -18,6 +22,8 @@ class RegisterFormInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) => onValidate(value),
+      onSaved: (value) => onSave(value!),
       cursorWidth: 2,
       keyboardType: inputType,
       obscureText: isPassword,
@@ -74,6 +80,12 @@ class RegisterFormInput extends StatelessWidget {
             color: Color.fromARGB(255, 200, 0, 0),
             width: 2,
           ),
+        ),
+        errorStyle: GoogleFonts.poppins(
+          color: const Color.fromARGB(255, 200, 0, 0),
+          fontWeight: FontWeight.w500,
+          letterSpacing: 0.65,
+          fontSize: 15,
         ),
       ),
     );
