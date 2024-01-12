@@ -3,13 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class RegisterFormOAuth extends StatelessWidget {
   const RegisterFormOAuth({
-    required this.isLogin,
+    required this.message,
     required this.image,
     required this.name,
     super.key,
   });
 
-  final bool isLogin;
+  final String message;
   final String image;
   final String name;
 
@@ -44,7 +44,7 @@ class RegisterFormOAuth extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-              text: isLogin ? "Login With " : "Sign Up With ",
+              text: "$message ",
               style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.w400,
                 letterSpacing: 0.25,

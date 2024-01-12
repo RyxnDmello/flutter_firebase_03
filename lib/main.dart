@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import './screens/splash.dart';
 import './screens/register.dart';
 
 void main() {

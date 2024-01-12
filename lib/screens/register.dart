@@ -23,12 +23,12 @@ class RegisterScreen extends StatelessWidget {
           ),
           color: Colors.black,
         ),
-        child: const SingleChildScrollView(
-          padding: EdgeInsets.only(
-            bottom: 20,
-            top: 40,
-          ),
-          child: SafeArea(
+        child: const SafeArea(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.only(
+              bottom: 20,
+              top: 20,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.start,

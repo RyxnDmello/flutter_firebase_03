@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
+import './form/register_form_profile.dart';
 import './form/register_form_title.dart';
 import './form/register_form_input.dart';
 import './form/register_form_button.dart';
@@ -19,6 +21,8 @@ class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
   bool _isLogin = false;
 
+  String? _profileAvatar;
+  String? _profileImage;
   String? _username;
   String? _email;
   String? _password;
@@ -82,6 +86,20 @@ class _RegisterFormState extends State<RegisterForm> {
     return null;
   }
 
+  Future<void> openGallery() async {
+    final pickedImage = await ImagePicker().pickImage(
+      source: ImageSource.camera,
+      maxWidth: 250,
+    );
+
+    if (pickedImage == null) return;
+
+    setState(() {
+      _profileImage = pickedImage.path;
+      _profileAvatar = null;
+    });
+  }
+
   void _saveUsername(String username) {
     _username = username;
   }
@@ -106,7 +124,7 @@ class _RegisterFormState extends State<RegisterForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 50, 20, 40),
+      padding: EdgeInsets.fromLTRB(20, _isLogin ? 80 : 40, 20, 20),
       child: Form(
         key: _formKey,
         child: Column(
@@ -116,6 +134,16 @@ class _RegisterFormState extends State<RegisterForm> {
             RegisterFormTitle(
               title: _isLogin ? "Welcome Back" : "Create Your Account",
             ),
+            if (!_isLogin)
+              const SizedBox(
+                height: 20,
+              ),
+            if (!_isLogin)
+              RegisterFormProfile(
+                profileAvatar: _profileAvatar,
+                profileImage: _profileImage,
+                openMenu: () {},
+              ),
             const SizedBox(
               height: 25,
             ),
@@ -163,7 +191,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 isPassword: true,
               ),
             const SizedBox(
-              height: 18,
+              height: 20,
             ),
             RegisterFormButton(
               label: _isLogin ? "Login Account" : "Create Account",
@@ -188,16 +216,8 @@ class _RegisterFormState extends State<RegisterForm> {
             ),
             RegisterFormOAuth(
               image: "./lib/images/register/providers/google.png",
-              isLogin: _isLogin,
+              message: _isLogin ? "Login With" : "Sign Up With",
               name: "Google",
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            RegisterFormOAuth(
-              image: "./lib/images/register/providers/github.png",
-              isLogin: _isLogin,
-              name: "GitHub",
             ),
           ],
         ),
