@@ -32,3 +32,5 @@ flutter:
     - ./lib/images/splash/
 
     - ./lib/images/register/providers/
+    - ./lib/images/register/avatars/
+    - ./lib/images/register/modal/

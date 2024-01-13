@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Logo extends StatelessWidget {
-  const Logo({super.key});
+  const Logo({
+    this.scale = 1,
+    super.key,
+  });
+
+  final double scale;
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +17,7 @@ class Logo extends StatelessWidget {
       children: [
         Image.asset(
           "./lib/images/logo.png",
-          width: 60,
-        ),
-        const SizedBox(
-          width: 0,
+          width: 60 * scale,
         ),
         RichText(
           text: TextSpan(
@@ -24,7 +26,7 @@ class Logo extends StatelessWidget {
               fontWeight: FontWeight.w300,
               color: Colors.white,
               letterSpacing: -2,
-              fontSize: 45,
+              fontSize: 45 * scale,
             ),
             children: [
               TextSpan(
@@ -33,7 +35,7 @@ class Logo extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   color: Colors.white,
                   letterSpacing: -2,
-                  fontSize: 45,
+                  fontSize: 45 * scale,
                 ),
               ),
             ],

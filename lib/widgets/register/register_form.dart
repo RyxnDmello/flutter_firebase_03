@@ -2,11 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../common/separator.dart';
+
 import './form/register_form_profile.dart';
+import './form/register_form_modal.dart';
 import './form/register_form_title.dart';
 import './form/register_form_input.dart';
 import './form/register_form_button.dart';
-import './form/register_form_divider.dart';
 import './form/register_form_switch.dart';
 import './form/register_form_oauth.dart';
 
@@ -30,6 +32,8 @@ class _RegisterFormState extends State<RegisterForm> {
 
   void _submitForm() {
     if (!_formKey.currentState!.validate()) return;
+    if (_profileAvatar == null && _profileImage == null) return;
+
     _formKey.currentState!.save();
 
     if (_isLogin && _password != _retypePassword) {
@@ -86,9 +90,9 @@ class _RegisterFormState extends State<RegisterForm> {
     return null;
   }
 
-  Future<void> openGallery() async {
+  Future<void> _selectImage({required ImageSource source}) async {
     final pickedImage = await ImagePicker().pickImage(
-      source: ImageSource.camera,
+      source: source,
       maxWidth: 250,
     );
 
@@ -114,6 +118,23 @@ class _RegisterFormState extends State<RegisterForm> {
 
   void _saveRetypePassword(String? retypedPassword) {
     _retypePassword = retypedPassword;
+  }
+
+  void _openProfileModal() {
+    showModalBottomSheet(
+      context: context,
+      clipBehavior: Clip.antiAlias,
+      builder: (context) {
+        return RegisterFormModal(
+          onOpenGallery: () => _selectImage(
+            source: ImageSource.gallery,
+          ),
+          onOpenCamera: () => _selectImage(
+            source: ImageSource.camera,
+          ),
+        );
+      },
+    );
   }
 
   void _switchForm() {
@@ -142,7 +163,7 @@ class _RegisterFormState extends State<RegisterForm> {
               RegisterFormProfile(
                 profileAvatar: _profileAvatar,
                 profileImage: _profileImage,
-                openMenu: () {},
+                openMenu: _openProfileModal,
               ),
             const SizedBox(
               height: 25,
@@ -208,7 +229,7 @@ class _RegisterFormState extends State<RegisterForm> {
             const SizedBox(
               height: 30,
             ),
-            const RegisterFormDivider(
+            const Separator(
               label: "OR",
             ),
             const SizedBox(
