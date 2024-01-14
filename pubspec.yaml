@@ -30,6 +30,7 @@ flutter:
     - ./lib/images/
     - ./lib/images/register/
     - ./lib/images/splash/
+    - ./lib/images/temp/
 
     - ./lib/images/register/providers/
     - ./lib/images/register/avatars/
