@@ -13,7 +13,33 @@ class HomeTrending extends StatefulWidget {
 
 class _HomeTrendingState extends State<HomeTrending>
     with TickerProviderStateMixin {
+  final _pageController = PageController();
   int _activePage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _slideshow();
+  }
+
+  void _slideshow() async {
+    Future.delayed(
+      const Duration(milliseconds: 10000),
+      () {
+        _pageController.animateToPage(
+          _activePage == 3 ? 0 : _activePage + 1,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+
+        setState(() {
+          _activePage = _activePage == 3 ? 0 : _activePage + 1;
+        });
+
+        _slideshow();
+      },
+    );
+  }
 
   void _switchPage(int activePage) {
     setState(() => _activePage = activePage);
@@ -36,17 +62,16 @@ class _HomeTrendingState extends State<HomeTrending>
           width: double.infinity,
           child: PageView.builder(
             itemCount: 4,
-            controller: PageController(
-              viewportFraction: 1,
-              initialPage: 0,
-            ),
             onPageChanged: _switchPage,
+            controller: _pageController,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
-              return const HomeTrendingMovie(
-                image: "./lib/images/temp/1.png",
+              return HomeTrendingMovie(
+                image: "./lib/images/temp/trending.png",
+                genre: "History • Drama",
                 title: "Napoleon",
                 rating: "6.4",
+                onTap: () {},
               );
             },
           ),
