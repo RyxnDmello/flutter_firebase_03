@@ -17,8 +17,8 @@ class HomePopularMovie extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              image,
+            image: NetworkImage(
+              "https://image.tmdb.org/t/p/original/$image",
             ),
             fit: BoxFit.cover,
           ),

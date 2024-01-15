@@ -30,8 +30,8 @@ class HomeTrendingMovie extends StatelessWidget {
         margin: const EdgeInsets.fromLTRB(15, 0, 15, 10),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              image,
+            image: NetworkImage(
+              "https://image.tmdb.org/t/p/original/$image",
             ),
             fit: BoxFit.cover,
             opacity: 1,

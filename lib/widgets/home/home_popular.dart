@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../../models/listing_model.dart';
+
 import './popular/home_popular_movie.dart';
 import './popular/home_popular_title.dart';
 
 class HomePopular extends StatelessWidget {
-  const HomePopular({super.key});
+  const HomePopular({
+    required this.popular,
+    super.key,
+  });
+
+  final List<ListingMovieModel> popular;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +31,6 @@ class HomePopular extends StatelessWidget {
             height: 10,
           ),
           GridView.builder(
-            itemCount: 6,
             shrinkWrap: true,
             padding: const EdgeInsets.all(0),
             physics: const NeverScrollableScrollPhysics(),
@@ -34,9 +40,10 @@ class HomePopular extends StatelessWidget {
               mainAxisSpacing: 15,
               crossAxisCount: 2,
             ),
+            itemCount: popular.length,
             itemBuilder: (context, index) {
               return HomePopularMovie(
-                image: "./lib/images/temp/popular.png",
+                image: popular[index].image,
                 onTap: () {},
               );
             },

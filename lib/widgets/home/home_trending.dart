@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../../models/listing_model.dart';
+
 import './trending/home_trending_title.dart';
 import './trending/home_trending_movie.dart';
 import './trending/home_trending_controller.dart';
 
 class HomeTrending extends StatefulWidget {
-  const HomeTrending({super.key});
+  const HomeTrending({
+    required this.trending,
+    super.key,
+  });
+
+  final List<ListingMovieModel> trending;
 
   @override
   State<HomeTrending> createState() => _HomeTrendingState();
@@ -13,36 +20,15 @@ class HomeTrending extends StatefulWidget {
 
 class _HomeTrendingState extends State<HomeTrending>
     with TickerProviderStateMixin {
-  final _pageController = PageController();
+  final _pageController = PageController(
+    viewportFraction: 1,
+    initialPage: 0,
+  );
+
   int _activePage = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    _slideshow();
-  }
-
-  void _slideshow() async {
-    Future.delayed(
-      const Duration(milliseconds: 10000),
-      () {
-        _pageController.animateToPage(
-          _activePage == 3 ? 0 : _activePage + 1,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.easeInOut,
-        );
-
-        setState(() {
-          _activePage = _activePage == 3 ? 0 : _activePage + 1;
-        });
-
-        _slideshow();
-      },
-    );
-  }
-
-  void _switchPage(int activePage) {
-    setState(() => _activePage = activePage);
+  void _onPageChanged(int nextPage) {
+    setState(() => _activePage = nextPage);
   }
 
   @override
@@ -61,16 +47,16 @@ class _HomeTrendingState extends State<HomeTrending>
           height: 250,
           width: double.infinity,
           child: PageView.builder(
-            itemCount: 4,
-            onPageChanged: _switchPage,
+            onPageChanged: _onPageChanged,
             controller: _pageController,
             physics: const BouncingScrollPhysics(),
+            itemCount: widget.trending.length,
             itemBuilder: (context, index) {
               return HomeTrendingMovie(
-                image: "./lib/images/temp/trending.png",
-                genre: "History • Drama",
-                title: "Napoleon",
-                rating: "6.4",
+                image: widget.trending[index].image,
+                genre: widget.trending[index].genres[0],
+                title: widget.trending[index].title,
+                rating: widget.trending[index].rating,
                 onTap: () {},
               );
             },
@@ -80,8 +66,8 @@ class _HomeTrendingState extends State<HomeTrending>
           height: 10,
         ),
         HomeTrendingController(
+          pageLength: widget.trending.length,
           activePage: _activePage,
-          pageLength: 4,
           vsync: this,
         ),
       ],
