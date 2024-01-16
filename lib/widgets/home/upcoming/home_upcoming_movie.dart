@@ -21,44 +21,65 @@ class HomeUpcomingMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        HomeUpcomingMovieImage(
-          image: image,
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            right: 10,
-            left: 10,
+    return Container(
+      clipBehavior: Clip.antiAlias,
+      margin: const EdgeInsets.only(
+        bottom: 10,
+        right: 5,
+        left: 5,
+        top: 10,
+      ),
+      decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black38,
+            offset: Offset(0, 5),
+            blurRadius: 5,
+          )
+        ],
+        color: const Color.fromARGB(255, 0, 0, 25),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          HomeUpcomingMovieImage(
+            image: image,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              HomeUpcomingMovieTitle(
-                title: title,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  HomeUpcomingMovieDate(
-                    date: date,
-                  ),
-                  HomeUpcomingMovieRating(
-                    rating: rating,
-                  ),
-                ],
-              ),
-            ],
+          const SizedBox(
+            height: 10,
           ),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.only(
+              bottom: 6,
+              right: 8,
+              left: 8,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                HomeUpcomingMovieTitle(
+                  title: title,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    HomeUpcomingMovieDate(
+                      date: date,
+                    ),
+                    HomeUpcomingMovieRating(
+                      rating: rating,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

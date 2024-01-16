@@ -13,10 +13,6 @@ class HomeUpcomingMovieImage extends StatelessWidget {
     return Container(
       height: 200,
       width: double.infinity,
-      margin: const EdgeInsets.only(
-        right: 10,
-        left: 10,
-      ),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
@@ -24,7 +20,11 @@ class HomeUpcomingMovieImage extends StatelessWidget {
           ),
           fit: BoxFit.cover,
         ),
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: const BorderRadius.only(
+          bottomRight: Radius.circular(5),
+          bottomLeft: Radius.circular(5),
+        ),
+        color: Colors.black,
       ),
     );
   }

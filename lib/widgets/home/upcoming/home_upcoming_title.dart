@@ -12,20 +12,21 @@ class HomeUpcomingTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15),
+      padding: const EdgeInsets.only(
+        left: 5,
+      ),
       child: Text(
         title,
         style: GoogleFonts.montserrat(
-          fontWeight: FontWeight.w500,
-          color: Colors.white,
-          letterSpacing: 1,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
           fontSize: 26,
           shadows: [
             const Shadow(
               color: Colors.black26,
               offset: Offset(0, 5),
               blurRadius: 10,
-            ),
+            )
           ],
         ),
       ),

@@ -6,7 +6,6 @@ class ListingMovieModel {
     required this.rating,
     required this.image,
     required this.date,
-    required this.adult,
   });
 
   final String id;
@@ -15,7 +14,10 @@ class ListingMovieModel {
   final String rating;
   final String image;
   final String date;
-  final bool adult;
+
+  String get genre {
+    return genres.join(" • ");
+  }
 }
 
 const latest = <ListingMovieModel>[
@@ -29,8 +31,8 @@ const latest = <ListingMovieModel>[
     ],
     rating: "6.453",
     date: "2024-10-20",
-    adult: false,
-    image: "f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -42,8 +44,8 @@ const latest = <ListingMovieModel>[
     ],
     rating: "6.453",
     date: "2024-10-20",
-    adult: false,
-    image: "f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -55,8 +57,8 @@ const latest = <ListingMovieModel>[
     ],
     rating: "6.453",
     date: "2024-10-20",
-    adult: false,
-    image: "f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
   ),
 ];
 
@@ -71,8 +73,8 @@ const trending = <ListingMovieModel>[
     ],
     rating: "6.453",
     date: "2024-10-20",
-    adult: false,
-    image: "f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -84,8 +86,8 @@ const trending = <ListingMovieModel>[
     ],
     rating: "6.453",
     date: "2024-10-20",
-    adult: false,
-    image: "f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -97,8 +99,8 @@ const trending = <ListingMovieModel>[
     ],
     rating: "6.453",
     date: "2024-10-20",
-    adult: false,
-    image: "f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
   ),
 ];
 
@@ -113,8 +115,8 @@ const popular = <ListingMovieModel>[
     ],
     rating: "8.5",
     date: "2024-10-20",
-    adult: true,
-    image: "rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -126,8 +128,8 @@ const popular = <ListingMovieModel>[
     ],
     rating: "8.5",
     date: "2024-10-20",
-    adult: true,
-    image: "rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -139,8 +141,8 @@ const popular = <ListingMovieModel>[
     ],
     rating: "8.5",
     date: "2024-10-20",
-    adult: true,
-    image: "rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -152,8 +154,8 @@ const popular = <ListingMovieModel>[
     ],
     rating: "8.5",
     date: "2024-10-20",
-    adult: true,
-    image: "rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -165,8 +167,8 @@ const popular = <ListingMovieModel>[
     ],
     rating: "8.5",
     date: "2024-10-20",
-    adult: true,
-    image: "rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -178,8 +180,8 @@ const popular = <ListingMovieModel>[
     ],
     rating: "8.5",
     date: "2024-10-20",
-    adult: true,
-    image: "rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
   ),
 ];
 
@@ -193,8 +195,8 @@ const upcoming = <ListingMovieModel>[
     ],
     rating: "7.5",
     date: "2024-10-20",
-    adult: false,
-    image: "yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -205,8 +207,8 @@ const upcoming = <ListingMovieModel>[
     ],
     rating: "7.5",
     date: "2024-10-20",
-    adult: false,
-    image: "yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -217,8 +219,8 @@ const upcoming = <ListingMovieModel>[
     ],
     rating: "7.5",
     date: "2024-10-20",
-    adult: false,
-    image: "yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
   ),
   ListingMovieModel(
     id: "1",
@@ -229,7 +231,7 @@ const upcoming = <ListingMovieModel>[
     ],
     rating: "7.5",
     date: "2024-10-20",
-    adult: false,
-    image: "yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+    image:
+        "https://image.tmdb.org/t/p/original/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
   ),
 ];

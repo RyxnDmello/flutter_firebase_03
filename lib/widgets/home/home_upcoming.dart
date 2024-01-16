@@ -15,21 +15,10 @@ class HomeUpcoming extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: const EdgeInsets.only(
-        bottom: 15,
-        top: 15,
-      ),
-      decoration: const BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black38,
-            offset: Offset(0, 5),
-            spreadRadius: 5,
-            blurRadius: 10,
-          )
-        ],
-        color: Color.fromARGB(255, 0, 0, 25),
+        right: 8,
+        left: 8,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -39,24 +28,20 @@ class HomeUpcoming extends StatelessWidget {
             title: "Upcoming Movies",
           ),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
-          Container(
-            height: 275,
+          SizedBox(
+            height: 288,
             width: double.infinity,
-            alignment: Alignment.topCenter,
-            padding: const EdgeInsets.only(
-              right: 5,
-              left: 5,
-            ),
             child: PageView.builder(
-              itemCount: 3,
               padEnds: false,
               pageSnapping: false,
+              physics: const BouncingScrollPhysics(),
               controller: PageController(
-                viewportFraction: 1 / 2,
+                viewportFraction: 1 / 1.8,
                 initialPage: 0,
               ),
+              itemCount: upcoming.length,
               itemBuilder: (context, index) {
                 return HomeUpcomingMovie(
                   rating: upcoming[index].rating,

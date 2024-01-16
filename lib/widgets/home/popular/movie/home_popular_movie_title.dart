@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeTrendingMovieTitle extends StatelessWidget {
-  const HomeTrendingMovieTitle({
+class HomePopularMovieTitle extends StatelessWidget {
+  const HomePopularMovieTitle({
     required this.title,
     super.key,
   });
@@ -16,8 +16,8 @@ class HomeTrendingMovieTitle extends StatelessWidget {
       style: GoogleFonts.montserrat(
         fontWeight: FontWeight.w500,
         color: Colors.white,
-        fontSize: 25,
-        height: 1,
+        letterSpacing: 0.5,
+        fontSize: 16,
       ),
     );
   }

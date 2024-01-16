@@ -43,7 +43,10 @@ class HomePopular extends StatelessWidget {
             itemCount: popular.length,
             itemBuilder: (context, index) {
               return HomePopularMovie(
+                title: popular[index].title,
                 image: popular[index].image,
+                genre: popular[index].genres[0],
+                rating: popular[index].rating,
                 onTap: () {},
               );
             },

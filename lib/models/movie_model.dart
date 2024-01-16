@@ -22,14 +22,16 @@ class MovieModel {
   final String tagline;
   final String rating;
   final List<String> genres;
-
   final DateTime date;
   final bool adult;
   final double runtime;
   final double revenue;
   final double budget;
-
   final List<String>? images;
   final String backdrop;
   final String poster;
+
+  String get genre {
+    return genres.join(" • ");
+  }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import './movie/home_trending_movie_title.dart';
+import './movie/home_trending_movie_genre.dart';
 import './movie/home_trending_movie_rating.dart';
+import './movie/home_trending_movie_fade.dart';
 
 class HomeTrendingMovie extends StatelessWidget {
   const HomeTrendingMovie({
@@ -30,11 +32,8 @@ class HomeTrendingMovie extends StatelessWidget {
         margin: const EdgeInsets.fromLTRB(15, 0, 15, 10),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-              "https://image.tmdb.org/t/p/original/$image",
-            ),
+            image: NetworkImage(image),
             fit: BoxFit.cover,
-            opacity: 1,
           ),
           boxShadow: const [
             BoxShadow(
@@ -48,37 +47,23 @@ class HomeTrendingMovie extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: Container(
-                height: 80,
-                width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromARGB(225, 0, 0, 0),
-                      Colors.transparent,
-                    ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                  ),
-                ),
-              ),
+            const HomeTrendingMovieFade(
+              height: 80,
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  HomeTrendingMovieTitle(
+                    title: title,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      HomeTrendingMovieTitle(
-                        title: title,
+                      HomeTrendingMovieGenre(
                         genre: genre,
                       ),
                       HomeTrendingMovieRating(
