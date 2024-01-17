@@ -4,14 +4,32 @@ import '../../models/listing_model.dart';
 
 import './upcoming/home_upcoming_movie.dart';
 import './upcoming/home_upcoming_title.dart';
+import './upcoming/home_upcoming_controller.dart';
 
-class HomeUpcoming extends StatelessWidget {
+class HomeUpcoming extends StatefulWidget {
   const HomeUpcoming({
     required this.upcoming,
     super.key,
   });
 
   final List<ListingMovieModel> upcoming;
+
+  @override
+  State<HomeUpcoming> createState() => _HomeUpcomingState();
+}
+
+class _HomeUpcomingState extends State<HomeUpcoming>
+    with TickerProviderStateMixin {
+  int _activePage = 0;
+
+  void _onPageChanged(int nextPage) {
+    if (nextPage % 2 == 0) {
+      setState(() => _activePage = nextPage ~/ 2);
+      return;
+    }
+
+    setState(() => _activePage = (nextPage + 1) % 2);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +43,7 @@ class HomeUpcoming extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const HomeUpcomingTitle(
-            title: "Upcoming Movies",
+            title: "Coming Soon",
           ),
           const SizedBox(
             height: 5,
@@ -38,19 +56,34 @@ class HomeUpcoming extends StatelessWidget {
               pageSnapping: false,
               physics: const BouncingScrollPhysics(),
               controller: PageController(
-                viewportFraction: 1 / 1.8,
+                viewportFraction: 1 / 2,
                 initialPage: 0,
               ),
-              itemCount: upcoming.length,
+              onPageChanged: _onPageChanged,
+              itemCount: widget.upcoming.length,
               itemBuilder: (context, index) {
                 return HomeUpcomingMovie(
-                  rating: upcoming[index].rating,
-                  title: upcoming[index].title,
-                  image: upcoming[index].image,
-                  date: upcoming[index].date,
+                  rating: widget.upcoming[index].rating,
+                  title: widget.upcoming[index].title,
+                  image: widget.upcoming[index].image,
+                  genre: widget.upcoming[index].genres[0],
                 );
               },
             ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              HomeUpcomingController(
+                pageLength: upcoming.length ~/ 2,
+                activePage: _activePage,
+                vsync: this,
+              ),
+            ],
           ),
         ],
       ),

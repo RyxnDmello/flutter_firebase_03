@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import './movie/home_upcoming_movie_image.dart';
 import './movie/home_upcoming_movie_title.dart';
-import './movie/home_upcoming_movie_date.dart';
+import './movie/home_upcoming_movie_genre.dart';
 import './movie/home_upcoming_movie_rating.dart';
 
 class HomeUpcomingMovie extends StatelessWidget {
@@ -10,14 +10,14 @@ class HomeUpcomingMovie extends StatelessWidget {
     required this.rating,
     required this.image,
     required this.title,
-    required this.date,
+    required this.genre,
     super.key,
   });
 
   final String image;
   final String title;
   final String rating;
-  final String date;
+  final String genre;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class HomeUpcomingMovie extends StatelessWidget {
           )
         ],
         color: const Color.fromARGB(255, 0, 0, 25),
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,8 +67,8 @@ class HomeUpcomingMovie extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    HomeUpcomingMovieDate(
-                      date: date,
+                    HomeUpcomingMovieGenre(
+                      genre: genre,
                     ),
                     HomeUpcomingMovieRating(
                       rating: rating,

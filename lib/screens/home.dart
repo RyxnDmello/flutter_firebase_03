@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../models/listing_model.dart';
+import '../models/genre_model.dart';
 
 import '../widgets/home/home_app_bar.dart';
 import '../widgets/home/home_trending.dart';
+import '../widgets/home/home_genres.dart';
 import '../widgets/home/home_upcoming.dart';
 import '../widgets/home/home_popular.dart';
 
@@ -33,6 +35,12 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
+            const HomeGenres(
+              genres: genres,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             const HomeUpcoming(
               upcoming: upcoming,
             ),
@@ -41,6 +49,9 @@ class HomeScreen extends StatelessWidget {
             ),
             const HomePopular(
               popular: popular,
+            ),
+            const SizedBox(
+              height: 20,
             ),
           ],
         ),

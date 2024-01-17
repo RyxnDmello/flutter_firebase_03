@@ -15,14 +15,12 @@ class HomeUpcomingMovieImage extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(
-            "https://image.tmdb.org/t/p/original/$image",
-          ),
+          image: NetworkImage(image),
           fit: BoxFit.cover,
         ),
         borderRadius: const BorderRadius.only(
-          bottomRight: Radius.circular(5),
-          bottomLeft: Radius.circular(5),
+          bottomRight: Radius.circular(10),
+          bottomLeft: Radius.circular(10),
         ),
         color: Colors.black,
       ),

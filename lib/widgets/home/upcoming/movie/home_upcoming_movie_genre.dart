@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 
-class HomeUpcomingMovieDate extends StatelessWidget {
-  const HomeUpcomingMovieDate({
-    required this.date,
+class HomeUpcomingMovieGenre extends StatelessWidget {
+  const HomeUpcomingMovieGenre({
+    required this.genre,
     super.key,
   });
 
-  final String date;
+  final String genre;
 
   @override
   Widget build(BuildContext context) {
-    String formattedDate() {
-      return DateFormat("yy/MM/dd").format(
-        DateTime.parse(date),
-      );
-    }
-
     return Text(
-      formattedDate(),
+      genre,
       style: GoogleFonts.montserrat(
         color: const Color.fromARGB(255, 200, 200, 200),
         fontWeight: FontWeight.w400,
-        letterSpacing: 1.5,
+        letterSpacing: 0.65,
         fontSize: 16,
       ),
     );
