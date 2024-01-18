@@ -37,4 +37,5 @@ flutter:
     - ./lib/images/register/avatars/
     - ./lib/images/register/modal/
     
+    - ./lib/images/home/buttons/
     - ./lib/images/home/genres/

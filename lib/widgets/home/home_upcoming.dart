@@ -67,6 +67,7 @@ class _HomeUpcomingState extends State<HomeUpcoming>
                   title: widget.upcoming[index].title,
                   image: widget.upcoming[index].image,
                   genre: widget.upcoming[index].genres[0],
+                  onTap: () {},
                 );
               },
             ),
