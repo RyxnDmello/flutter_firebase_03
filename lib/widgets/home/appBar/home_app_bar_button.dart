@@ -12,11 +12,18 @@ class HomeAppBarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
+    return IconButton.filled(
       onPressed: onOpen,
-      icon: Icon(icon),
-      color: Colors.white,
-      iconSize: 28,
+      style: IconButton.styleFrom(
+        padding: const EdgeInsets.all(10),
+        backgroundColor: Colors.black45,
+        foregroundColor: Colors.black,
+        iconSize: 25,
+      ),
+      icon: Icon(
+        icon,
+        color: Colors.white,
+      ),
     );
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../models/listing_model.dart';
 
-import './trending/home_trending_title.dart';
 import './trending/home_trending_movie.dart';
 import './trending/home_trending_controller.dart';
 
@@ -37,19 +36,12 @@ class _HomeTrendingState extends State<HomeTrending>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const HomeTrendingTitle(
-          title: "Trending Movies",
-        ),
-        const SizedBox(
-          height: 10,
-        ),
         SizedBox(
-          height: 250,
+          height: 450,
           width: double.infinity,
           child: PageView.builder(
             onPageChanged: _onPageChanged,
             controller: _pageController,
-            physics: const BouncingScrollPhysics(),
             itemCount: widget.trending.length,
             itemBuilder: (context, index) {
               return HomeTrendingMovie(

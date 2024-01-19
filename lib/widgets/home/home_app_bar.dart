@@ -19,16 +19,10 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(20, 25, 20, 20),
-      decoration: const BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black38,
-            offset: Offset(0, 8),
-            blurRadius: 8,
-          ),
-        ],
-        color: Color.fromARGB(255, 0, 0, 25),
+      padding: const EdgeInsets.only(
+        right: 20,
+        left: 20,
+        top: 15,
       ),
       child: SafeArea(
         child: Row(
@@ -47,9 +41,15 @@ class HomeAppBar extends StatelessWidget {
                   onOpen: () {},
                   icon: Icons.share_outlined,
                 ),
+                const SizedBox(
+                  width: 5,
+                ),
                 HomeAppBarButton(
                   onOpen: () {},
                   icon: Icons.favorite_outline,
+                ),
+                const SizedBox(
+                  width: 5,
                 ),
                 HomeAppBarButton(
                   onOpen: () {},

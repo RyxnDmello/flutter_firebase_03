@@ -22,19 +22,20 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HomeAppBar(
-              onOpenSearch: () {},
-              onOpenSaved: () {},
-              onOpenShare: () {},
+            Stack(
+              children: [
+                const HomeTrending(
+                  trending: trending,
+                ),
+                HomeAppBar(
+                  onOpenSearch: () {},
+                  onOpenSaved: () {},
+                  onOpenShare: () {},
+                ),
+              ],
             ),
             const SizedBox(
-              height: 20,
-            ),
-            const HomeTrending(
-              trending: trending,
-            ),
-            const SizedBox(
-              height: 20,
+              height: 25,
             ),
             HomeButton(
               image: "./lib/images/home/buttons/tv.png",
@@ -54,25 +55,22 @@ class HomeScreen extends StatelessWidget {
               onTap: () {},
             ),
             const SizedBox(
-              height: 20,
+              height: 25,
             ),
             const HomeGenres(
               genres: genres,
             ),
             const SizedBox(
-              height: 20,
+              height: 25,
             ),
             const HomeUpcoming(
               upcoming: upcoming,
             ),
             const SizedBox(
-              height: 20,
+              height: 25,
             ),
             const HomePopular(
               popular: popular,
-            ),
-            const SizedBox(
-              height: 20,
             ),
           ],
         ),

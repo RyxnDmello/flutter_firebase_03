@@ -29,7 +29,9 @@ class HomeTrendingMovie extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         clipBehavior: Clip.antiAlias,
-        margin: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+        margin: const EdgeInsets.only(
+          bottom: 15,
+        ),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(image),
@@ -39,10 +41,9 @@ class HomeTrendingMovie extends StatelessWidget {
             BoxShadow(
               color: Colors.black45,
               offset: Offset(0, 5),
-              blurRadius: 5,
+              blurRadius: 10,
             ),
           ],
-          borderRadius: BorderRadiusDirectional.circular(5),
           color: Colors.black,
         ),
         child: Stack(
