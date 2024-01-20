@@ -10,8 +10,25 @@ import '../widgets/home/home_genres.dart';
 import '../widgets/home/home_upcoming.dart';
 import '../widgets/home/home_popular.dart';
 
-class HomeScreen extends StatelessWidget {
+import './genre.dart';
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  void _openGenreScreen() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return const GenreScreen();
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +74,8 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            const HomeGenres(
+            HomeGenres(
+              onSelectGenre: _openGenreScreen,
               genres: genres,
             ),
             const SizedBox(

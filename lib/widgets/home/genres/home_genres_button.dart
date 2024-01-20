@@ -15,52 +15,49 @@ class HomeGenresButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.only(
-          right: 15,
-          left: 15,
+    return Container(
+      margin: const EdgeInsets.only(
+        bottom: 5,
+        top: 5,
+      ),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: const Color.fromARGB(255, 0, 0, 50),
+          width: 2.5,
         ),
-        margin: const EdgeInsets.only(
-          bottom: 5,
-          top: 5,
-        ),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: const Color.fromARGB(255, 0, 0, 50),
-            width: 2.5,
+        borderRadius: BorderRadius.circular(40),
+      ),
+      child: InkWell(
+        onTap: onTap,
+        highlightColor: const Color.fromARGB(60, 0, 0, 255),
+        splashColor: const Color.fromARGB(100, 0, 0, 255),
+        borderRadius: BorderRadius.circular(40),
+        child: Padding(
+          padding: const EdgeInsets.only(
+            right: 15,
+            left: 15,
           ),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black38,
-              offset: Offset(0, 2.5),
-              blurRadius: 5,
-            ),
-          ],
-          borderRadius: BorderRadius.circular(40),
-          color: Colors.white,
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              genre.image,
-              width: 25,
-            ),
-            const SizedBox(
-              width: 6.5,
-            ),
-            Text(
-              genre.name,
-              style: GoogleFonts.montserrat(
-                color: const Color.fromARGB(255, 0, 0, 50),
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                genre.image,
+                width: 25,
               ),
-            )
-          ],
+              const SizedBox(
+                width: 6.5,
+              ),
+              Text(
+                genre.name,
+                style: GoogleFonts.montserrat(
+                  color: const Color.fromARGB(255, 0, 0, 50),
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

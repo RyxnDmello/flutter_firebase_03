@@ -42,7 +42,7 @@ class HomeUpcomingMovie extends StatelessWidget {
             )
           ],
           color: const Color.fromARGB(255, 0, 0, 25),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(5),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

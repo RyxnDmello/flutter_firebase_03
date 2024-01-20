@@ -7,10 +7,12 @@ import './genres/home_genres_button.dart';
 
 class HomeGenres extends StatelessWidget {
   const HomeGenres({
+    required this.onSelectGenre,
     required this.genres,
     super.key,
   });
 
+  final void Function() onSelectGenre;
   final List<GenreModel> genres;
 
   @override
@@ -39,7 +41,7 @@ class HomeGenres extends StatelessWidget {
             itemBuilder: (context, index) {
               return HomeGenresButton(
                 genre: genres[index],
-                onTap: () {},
+                onTap: onSelectGenre,
               );
             },
             separatorBuilder: (context, index) {
