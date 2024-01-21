@@ -20,11 +20,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void _openGenreScreen() {
+  void _openGenreScreen({required GenreModel genre}) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return const GenreScreen();
+          return GenreScreen(
+            movies: trending,
+            genre: genre,
+          );
         },
       ),
     );

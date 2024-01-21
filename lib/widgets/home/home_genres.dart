@@ -12,7 +12,7 @@ class HomeGenres extends StatelessWidget {
     super.key,
   });
 
-  final void Function() onSelectGenre;
+  final void Function({required GenreModel genre}) onSelectGenre;
   final List<GenreModel> genres;
 
   @override
@@ -40,8 +40,10 @@ class HomeGenres extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               return HomeGenresButton(
+                onTap: () => onSelectGenre(
+                  genre: genres[index],
+                ),
                 genre: genres[index],
-                onTap: onSelectGenre,
               );
             },
             separatorBuilder: (context, index) {
