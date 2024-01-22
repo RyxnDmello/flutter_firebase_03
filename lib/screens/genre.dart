@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/listing_model.dart';
 import '../models/genre_model.dart';
 
-import '../widgets/genre/genre_app_bar.dart';
+import '../widgets/genre/genre_header.dart';
 import '../widgets/genre/genre_name.dart';
 import '../widgets/genre/genre_list.dart';
 
@@ -22,6 +22,29 @@ class GenreScreen extends StatefulWidget {
 }
 
 class _GenreScreenState extends State<GenreScreen> {
+  List<ListingMovieModel> _movies = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _movies = widget.movies;
+  }
+
+  void _search({required String search}) {
+    List<ListingMovieModel> filteredMovies = [];
+
+    for (final movie in widget.movies) {
+      if (!movie.title.toLowerCase().startsWith(search)) continue;
+      filteredMovies.add(movie);
+    }
+
+    setState(() => _movies = filteredMovies);
+  }
+
+  void _default() {
+    setState(() => _movies = widget.movies);
+  }
+
   void _closeGenreScreen() {
     Navigator.of(context).pop();
   }
@@ -35,8 +58,10 @@ class _GenreScreenState extends State<GenreScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            GenreAppBar(
+            GenreHeader(
               onBack: _closeGenreScreen,
+              onDefault: _default,
+              onSearch: _search,
             ),
             const SizedBox(
               height: 25,
@@ -48,7 +73,7 @@ class _GenreScreenState extends State<GenreScreen> {
               height: 15,
             ),
             GenreList(
-              trending: widget.movies,
+              trending: _movies,
             ),
           ],
         ),
