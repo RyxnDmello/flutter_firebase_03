@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GenreListMovieFade extends StatelessWidget {
-  const GenreListMovieFade({
+class GenreMovieFade extends StatelessWidget {
+  const GenreMovieFade({
     required this.height,
     super.key,
   });

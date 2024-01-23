@@ -4,8 +4,8 @@ import '../models/listing_model.dart';
 import '../models/genre_model.dart';
 
 import '../widgets/genre/genre_header.dart';
-import '../widgets/genre/genre_name.dart';
-import '../widgets/genre/genre_list.dart';
+import '../widgets/genre/genre_title.dart';
+import '../widgets/genre/genre_movies.dart';
 
 class GenreScreen extends StatefulWidget {
   const GenreScreen({
@@ -66,13 +66,13 @@ class _GenreScreenState extends State<GenreScreen> {
             const SizedBox(
               height: 25,
             ),
-            GenreName(
+            GenreTitle(
               name: widget.genre.name,
             ),
             const SizedBox(
               height: 15,
             ),
-            GenreList(
+            GenreMovies(
               trending: _movies,
             ),
           ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class GenreName extends StatelessWidget {
-  const GenreName({
+class GenreTitle extends StatelessWidget {
+  const GenreTitle({
     super.key,
     required this.name,
   });

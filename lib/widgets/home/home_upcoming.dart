@@ -63,10 +63,10 @@ class _HomeUpcomingState extends State<HomeUpcoming>
               itemCount: widget.upcoming.length,
               itemBuilder: (context, index) {
                 return HomeUpcomingMovie(
-                  rating: widget.upcoming[index].rating,
                   title: widget.upcoming[index].title,
-                  image: widget.upcoming[index].image,
+                  image: widget.upcoming[index].imageURI,
                   genre: widget.upcoming[index].genres[0],
+                  rating: widget.upcoming[index].rating,
                   onTap: () {},
                 );
               },
@@ -80,7 +80,7 @@ class _HomeUpcomingState extends State<HomeUpcoming>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               HomeUpcomingController(
-                pageLength: upcoming.length ~/ 2,
+                pageLength: widget.upcoming.length ~/ 2,
                 activePage: _activePage,
                 vsync: this,
               ),

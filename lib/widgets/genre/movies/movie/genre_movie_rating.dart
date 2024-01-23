@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class GenreListMovieRating extends StatelessWidget {
-  const GenreListMovieRating({
+class GenreMovieRating extends StatelessWidget {
+  const GenreMovieRating({
     required this.rating,
     super.key,
   });

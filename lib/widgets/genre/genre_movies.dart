@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../models/listing_model.dart';
 
-import './list/genre_list_movie.dart';
+import './movies/genre_movie.dart';
 
-class GenreList extends StatelessWidget {
-  const GenreList({
+class GenreMovies extends StatelessWidget {
+  const GenreMovies({
     required this.trending,
     super.key,
   });
@@ -23,7 +23,7 @@ class GenreList extends StatelessWidget {
         left: 15,
       ),
       itemBuilder: (context, index) {
-        return GenreListMovie(
+        return GenreMovie(
           onSelectMovie: () {},
           movie: trending[index],
         );

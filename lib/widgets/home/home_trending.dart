@@ -45,9 +45,9 @@ class _HomeTrendingState extends State<HomeTrending>
             itemCount: widget.trending.length,
             itemBuilder: (context, index) {
               return HomeTrendingMovie(
-                image: widget.trending[index].image,
-                genre: widget.trending[index].genre,
                 title: widget.trending[index].title,
+                image: widget.trending[index].imageURI,
+                genre: widget.trending[index].genre,
                 rating: widget.trending[index].rating,
                 onTap: () {},
               );

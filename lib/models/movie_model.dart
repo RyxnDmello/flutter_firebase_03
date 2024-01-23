@@ -1,3 +1,5 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class MovieModel {
   const MovieModel({
     required this.id,
@@ -33,5 +35,23 @@ class MovieModel {
 
   String get genre {
     return genres.join(" • ");
+  }
+
+  String get backdropURI {
+    return "${dotenv.env["IMAGE_API"]}$backdrop";
+  }
+
+  String get posterURI {
+    return "${dotenv.env["IMAGE_API"]}$poster";
+  }
+
+  List<String>? get imagesURI {
+    if (images == null) return null;
+
+    return images!.map(
+      (image) {
+        return "${dotenv.env["IMAGE_API"]}$image";
+      },
+    ).toList();
   }
 }

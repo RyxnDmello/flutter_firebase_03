@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../models/listing_model.dart';
 
-import './movie/genre_list_movie_fade.dart';
-import './movie/genre_list_movie_title.dart';
-import './movie/genre_list_movie_genres.dart';
-import './movie/genre_list_movie_rating.dart';
+import './movie/genre_movie_fade.dart';
+import './movie/genre_movie_title.dart';
+import './movie/genre_movie_genres.dart';
+import './movie/genre_movie_rating.dart';
 
-class GenreListMovie extends StatelessWidget {
-  const GenreListMovie({
+class GenreMovie extends StatelessWidget {
+  const GenreMovie({
     required this.onSelectMovie,
     required this.movie,
     super.key,
@@ -44,7 +44,7 @@ class GenreListMovie extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            const GenreListMovieFade(
+            const GenreMovieFade(
               height: 80,
             ),
             Padding(
@@ -57,17 +57,17 @@ class GenreListMovie extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GenreListMovieTitle(
+                  GenreMovieTitle(
                     title: movie.title,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      GenreListMovieGenres(
+                      GenreMovieGenres(
                         title: movie.genre,
                       ),
-                      GenreListMovieRating(
+                      GenreMovieRating(
                         rating: movie.rating,
                       ),
                     ],

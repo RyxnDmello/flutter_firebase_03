@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class GenreListMovieGenres extends StatelessWidget {
-  const GenreListMovieGenres({
+class GenreMovieTitle extends StatelessWidget {
+  const GenreMovieTitle({
     required this.title,
     super.key,
   });
@@ -14,10 +14,10 @@ class GenreListMovieGenres extends StatelessWidget {
     return Text(
       title,
       style: GoogleFonts.montserrat(
-        color: const Color.fromARGB(255, 225, 225, 225),
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.25,
-        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: Colors.white,
+        fontSize: 25,
+        height: 1,
       ),
     );
   }
