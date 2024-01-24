@@ -24,8 +24,11 @@ class GenreMovies extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return GenreMovie(
+          title: trending[index].title,
+          image: trending[index].imageURI,
+          rating: trending[index].rating,
+          genre: trending[index].genre,
           onSelectMovie: () {},
-          movie: trending[index],
         );
       },
       separatorBuilder: (context, index) {

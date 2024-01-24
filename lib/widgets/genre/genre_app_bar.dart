@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './appBar/genre_app_bar_button.dart';
+import 'appBar/genre_app_bar_button.dart';
 
 class GenreAppBar extends StatelessWidget {
   const GenreAppBar({

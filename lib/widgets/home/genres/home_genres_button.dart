@@ -34,22 +34,15 @@ class HomeGenresButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(40),
         child: Padding(
           padding: const EdgeInsets.only(
-            right: 15,
-            left: 15,
+            right: 20,
+            left: 20,
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                genre.image,
-                width: 25,
-              ),
-              const SizedBox(
-                width: 6.5,
-              ),
               Text(
-                genre.name,
+                genre.title,
                 style: GoogleFonts.montserrat(
                   color: const Color.fromARGB(255, 0, 0, 50),
                   fontWeight: FontWeight.w600,

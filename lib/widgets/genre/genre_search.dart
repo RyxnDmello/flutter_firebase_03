@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class GenreHeaderSearch extends StatelessWidget {
-  const GenreHeaderSearch({
+class GenreSearch extends StatelessWidget {
+  const GenreSearch({
     required this.onSearch,
     super.key,
   });
 
-  final void Function({required String? value}) onSearch;
+  final void Function({required String? input}) onSearch;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       onChanged: (value) => onSearch(
-        value: value,
+        input: value,
       ),
       style: GoogleFonts.montserrat(
         fontWeight: FontWeight.w500,
@@ -22,14 +22,12 @@ class GenreHeaderSearch extends StatelessWidget {
         fontSize: 20,
       ),
       decoration: InputDecoration(
-        label: Text(
-          "Search",
-          style: GoogleFonts.montserrat(
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-            letterSpacing: 1.5,
-            fontSize: 20,
-          ),
+        hintText: "Search",
+        hintStyle: GoogleFonts.montserrat(
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+          letterSpacing: 1.5,
+          fontSize: 20,
         ),
         suffixIcon: const Padding(
           padding: EdgeInsets.only(
@@ -46,19 +44,15 @@ class GenreHeaderSearch extends StatelessWidget {
           vertical: 10,
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.white,
-            width: 2,
-          ),
           borderRadius: BorderRadius.circular(40),
+          borderSide: BorderSide.none,
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.white,
-            width: 2,
-          ),
           borderRadius: BorderRadius.circular(40),
+          borderSide: BorderSide.none,
         ),
+        fillColor: const Color.fromARGB(255, 0, 0, 50),
+        filled: true,
       ),
     );
   }

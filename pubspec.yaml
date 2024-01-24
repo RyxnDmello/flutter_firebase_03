@@ -35,10 +35,10 @@ flutter:
     - ./lib/images/register/
     - ./lib/images/splash/
     - ./lib/images/home/
+    - ./lib/images/genre/
 
     - ./lib/images/register/providers/
     - ./lib/images/register/avatars/
     - ./lib/images/register/modal/
 
     - ./lib/images/home/buttons/
-    - ./lib/images/home/genres/

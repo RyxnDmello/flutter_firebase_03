@@ -3,33 +3,21 @@ import 'package:google_fonts/google_fonts.dart';
 
 class GenreTitle extends StatelessWidget {
   const GenreTitle({
+    required this.title,
     super.key,
-    required this.name,
   });
 
-  final String name;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        right: 15,
-        left: 15,
-      ),
-      child: Text(
-        "$name Movies",
-        style: GoogleFonts.montserrat(
-          fontWeight: FontWeight.w600,
-          color: Colors.black,
-          fontSize: 30,
-          shadows: [
-            const Shadow(
-              color: Colors.black26,
-              offset: Offset(0, 5),
-              blurRadius: 10,
-            ),
-          ],
-        ),
+    return Text(
+      "$title Movies",
+      textAlign: TextAlign.center,
+      style: GoogleFonts.montserrat(
+        fontWeight: FontWeight.w500,
+        color: Colors.white,
+        fontSize: 35,
       ),
     );
   }

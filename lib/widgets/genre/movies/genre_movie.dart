@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/listing_model.dart';
-
 import './movie/genre_movie_fade.dart';
 import './movie/genre_movie_title.dart';
 import './movie/genre_movie_genres.dart';
@@ -10,12 +8,18 @@ import './movie/genre_movie_rating.dart';
 class GenreMovie extends StatelessWidget {
   const GenreMovie({
     required this.onSelectMovie,
-    required this.movie,
+    required this.title,
+    required this.image,
+    required this.genre,
+    required this.rating,
     super.key,
   });
 
   final void Function() onSelectMovie;
-  final ListingMovieModel movie;
+  final String title;
+  final String image;
+  final String genre;
+  final String rating;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +31,7 @@ class GenreMovie extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-              movie.image,
-            ),
+            image: NetworkImage(image),
             fit: BoxFit.cover,
           ),
           boxShadow: const [
@@ -58,17 +60,17 @@ class GenreMovie extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GenreMovieTitle(
-                    title: movie.title,
+                    title: title,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       GenreMovieGenres(
-                        title: movie.genre,
+                        title: genre,
                       ),
                       GenreMovieRating(
-                        rating: movie.rating,
+                        rating: rating,
                       ),
                     ],
                   ),

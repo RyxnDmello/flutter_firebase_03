@@ -1,65 +1,50 @@
 import 'package:flutter/material.dart';
 
-import './header/genre_app_bar.dart';
-import './header/genre_header_search.dart';
-
 class GenreHeader extends StatelessWidget {
   const GenreHeader({
-    required this.onDefault,
-    required this.onSearch,
-    required this.onBack,
+    required this.group,
+    required this.height,
+    required this.image,
     super.key,
   });
 
-  final void Function({required String search}) onSearch;
-  final void Function() onDefault;
-  final void Function() onBack;
+  final Widget group;
+  final double height;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
-    void search({required String? value}) {
-      if (value == null || value.isEmpty) {
-        onDefault();
-        return;
-      }
-
-      onSearch(
-        search: value,
-      );
-    }
-
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-        vertical: 20,
-      ),
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 0, 25),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black45,
-            offset: Offset(0, 5),
-            blurRadius: 10,
-          )
-        ],
-      ),
-      child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GenreAppBar(
-              onBack: onBack,
+    return Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          height: height,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(image),
+              fit: BoxFit.cover,
             ),
-            const SizedBox(
-              height: 15,
-            ),
-            GenreHeaderSearch(
-              onSearch: search,
-            ),
-          ],
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black45,
+                offset: Offset(0, 5),
+                blurRadius: 10,
+              )
+            ],
+            color: Colors.black,
+          ),
         ),
-      ),
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              right: 15,
+              left: 15,
+              top: 5,
+            ),
+            child: group,
+          ),
+        ),
+      ],
     );
   }
 }
