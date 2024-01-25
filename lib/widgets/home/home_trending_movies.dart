@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../models/listing_model.dart';
 
-import './trending/home_trending_movie.dart';
-import './trending/home_trending_controller.dart';
+import '../common/catalogue/catalogue_indicators.dart';
 
-class HomeTrending extends StatefulWidget {
-  const HomeTrending({
+import './movies/home_trending_movie.dart';
+
+class HomeTrendingMovies extends StatefulWidget {
+  const HomeTrendingMovies({
     required this.trending,
     super.key,
   });
@@ -14,10 +15,10 @@ class HomeTrending extends StatefulWidget {
   final List<ListingMovieModel> trending;
 
   @override
-  State<HomeTrending> createState() => _HomeTrendingState();
+  State<HomeTrendingMovies> createState() => _HomeTrendingMoviesState();
 }
 
-class _HomeTrendingState extends State<HomeTrending>
+class _HomeTrendingMoviesState extends State<HomeTrendingMovies>
     with TickerProviderStateMixin {
   final _pageController = PageController(
     viewportFraction: 1,
@@ -57,10 +58,16 @@ class _HomeTrendingState extends State<HomeTrending>
         const SizedBox(
           height: 10,
         ),
-        HomeTrendingController(
-          pageLength: widget.trending.length,
-          activePage: _activePage,
-          vsync: this,
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CatalogueIndicators(
+              pageLength: widget.trending.length,
+              activePage: _activePage,
+              vsync: this,
+            ),
+          ],
         ),
       ],
     );

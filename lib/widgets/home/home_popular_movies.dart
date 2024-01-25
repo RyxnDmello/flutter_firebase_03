@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../models/listing_model.dart';
 
-import './popular/home_popular_movie.dart';
-import './popular/home_popular_title.dart';
+import '../common/catalogue/catalogue_title.dart';
 
-class HomePopular extends StatelessWidget {
-  const HomePopular({
+import './movies/home_popular_movie.dart';
+
+class HomePopularMovies extends StatelessWidget {
+  const HomePopularMovies({
     required this.popular,
     super.key,
   });
@@ -24,7 +25,7 @@ class HomePopular extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const HomePopularTitle(
+          const CatalogueTitle(
             title: "Popular Movies",
           ),
           const SizedBox(

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import './movie/home_popular_movie_title.dart';
-import './movie/home_popular_movie_genre.dart';
-import './movie/home_popular_movie_rating.dart';
-import './movie/home_popular_movie_fade.dart';
+import './trending/home_trending_movie_title.dart';
+import './trending/home_trending_movie_genre.dart';
+import './trending/home_trending_movie_rating.dart';
+import './trending/home_trending_movie_fade.dart';
 
-class HomePopularMovie extends StatelessWidget {
-  const HomePopularMovie({
+class HomeTrendingMovie extends StatelessWidget {
+  const HomeTrendingMovie({
     required this.onTap,
     required this.image,
     required this.title,
@@ -16,17 +16,22 @@ class HomePopularMovie extends StatelessWidget {
   });
 
   final void Function() onTap;
+  final String rating;
   final String image;
   final String title;
   final String genre;
-  final String rating;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: double.infinity,
+        height: double.infinity,
         clipBehavior: Clip.antiAlias,
+        margin: const EdgeInsets.only(
+          bottom: 15,
+        ),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(image),
@@ -34,36 +39,35 @@ class HomePopularMovie extends StatelessWidget {
           ),
           boxShadow: const [
             BoxShadow(
-              color: Color.fromARGB(200, 0, 0, 0),
+              color: Colors.black45,
               offset: Offset(0, 5),
               blurRadius: 10,
             ),
           ],
-          borderRadius: BorderRadius.circular(5),
           color: Colors.black,
         ),
         child: Stack(
           children: [
-            const HomePopularMovieFade(
+            const HomeTrendingMovieFade(
               height: 80,
             ),
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(15),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  HomePopularMovieTitle(
+                  HomeTrendingMovieTitle(
                     title: title,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      HomePopularMovieGenre(
+                      HomeTrendingMovieGenre(
                         genre: genre,
                       ),
-                      HomePopularMovieRating(
+                      HomeTrendingMovieRating(
                         rating: rating,
                       ),
                     ],

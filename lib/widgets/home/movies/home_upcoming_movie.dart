@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './movie/home_upcoming_movie_image.dart';
-import './movie/home_upcoming_movie_title.dart';
-import './movie/home_upcoming_movie_genre.dart';
-import './movie/home_upcoming_movie_rating.dart';
+import './upcoming/home_upcoming_movie_image.dart';
+import './upcoming/home_upcoming_movie_title.dart';
+import './upcoming/home_upcoming_movie_genre.dart';
+import './upcoming/home_upcoming_movie_rating.dart';
 
 class HomeUpcomingMovie extends StatelessWidget {
   const HomeUpcomingMovie({

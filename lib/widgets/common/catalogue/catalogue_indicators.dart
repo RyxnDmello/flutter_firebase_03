@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeUpcomingController extends StatelessWidget {
-  const HomeUpcomingController({
+class CatalogueIndicators extends StatelessWidget {
+  const CatalogueIndicators({
     required this.activePage,
     required this.pageLength,
     required this.vsync,

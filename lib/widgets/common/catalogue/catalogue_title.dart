@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePopularTitle extends StatelessWidget {
-  const HomePopularTitle({
+class CatalogueTitle extends StatelessWidget {
+  const CatalogueTitle({
     required this.title,
     super.key,
   });

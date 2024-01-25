@@ -18,10 +18,6 @@ class HomeUpcomingMovieImage extends StatelessWidget {
           image: NetworkImage(image),
           fit: BoxFit.cover,
         ),
-        borderRadius: const BorderRadius.only(
-          bottomRight: Radius.circular(10),
-          bottomLeft: Radius.circular(10),
-        ),
         color: Colors.black,
       ),
     );

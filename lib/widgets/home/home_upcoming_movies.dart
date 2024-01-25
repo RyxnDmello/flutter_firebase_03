@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../models/listing_model.dart';
 
-import './upcoming/home_upcoming_movie.dart';
-import './upcoming/home_upcoming_title.dart';
-import './upcoming/home_upcoming_controller.dart';
+import '../common/catalogue/catalogue_title.dart';
+import '../common/catalogue/catalogue_indicators.dart';
 
-class HomeUpcoming extends StatefulWidget {
-  const HomeUpcoming({
+import './movies/home_upcoming_movie.dart';
+
+class HomeUpcomingMovies extends StatefulWidget {
+  const HomeUpcomingMovies({
     required this.upcoming,
     super.key,
   });
@@ -15,20 +16,15 @@ class HomeUpcoming extends StatefulWidget {
   final List<ListingMovieModel> upcoming;
 
   @override
-  State<HomeUpcoming> createState() => _HomeUpcomingState();
+  State<HomeUpcomingMovies> createState() => _HomeUpcomingMoviesState();
 }
 
-class _HomeUpcomingState extends State<HomeUpcoming>
+class _HomeUpcomingMoviesState extends State<HomeUpcomingMovies>
     with TickerProviderStateMixin {
   int _activePage = 0;
 
   void _onPageChanged(int nextPage) {
-    if (nextPage % 2 == 0) {
-      setState(() => _activePage = nextPage ~/ 2);
-      return;
-    }
-
-    setState(() => _activePage = (nextPage + 1) % 2);
+    setState(() => _activePage = nextPage);
   }
 
   @override
@@ -42,21 +38,22 @@ class _HomeUpcomingState extends State<HomeUpcoming>
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const HomeUpcomingTitle(
-            title: "Coming Soon",
-          ),
-          const SizedBox(
-            height: 5,
+          const Padding(
+            padding: EdgeInsets.only(
+              right: 5,
+              left: 5,
+            ),
+            child: CatalogueTitle(
+              title: "Coming Soon",
+            ),
           ),
           SizedBox(
             height: 288,
             width: double.infinity,
             child: PageView.builder(
               padEnds: false,
-              pageSnapping: false,
-              physics: const BouncingScrollPhysics(),
               controller: PageController(
-                viewportFraction: 1 / 2,
+                viewportFraction: 1 / 1.5,
                 initialPage: 0,
               ),
               onPageChanged: _onPageChanged,
@@ -65,8 +62,8 @@ class _HomeUpcomingState extends State<HomeUpcoming>
                 return HomeUpcomingMovie(
                   title: widget.upcoming[index].title,
                   image: widget.upcoming[index].imageURI,
-                  genre: widget.upcoming[index].genres[0],
                   rating: widget.upcoming[index].rating,
+                  genre: widget.upcoming[index].genre,
                   onTap: () {},
                 );
               },
@@ -79,8 +76,8 @@ class _HomeUpcomingState extends State<HomeUpcoming>
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              HomeUpcomingController(
-                pageLength: widget.upcoming.length ~/ 2,
+              CatalogueIndicators(
+                pageLength: widget.upcoming.length,
                 activePage: _activePage,
                 vsync: this,
               ),

@@ -3,20 +3,22 @@ import './genre_model.dart';
 
 class HomeModel {
   const HomeModel({
-    required this.trending,
-    required this.upcoming,
-    required this.popular,
+    required this.trendingMovies,
+    required this.upcomingMovies,
+    required this.popularMovies,
+    required this.trendingTV,
     required this.genres,
   });
 
-  final List<ListingMovieModel> trending;
-  final List<ListingMovieModel> upcoming;
-  final List<ListingMovieModel> popular;
+  final List<ListingMovieModel> trendingMovies;
+  final List<ListingMovieModel> upcomingMovies;
+  final List<ListingMovieModel> popularMovies;
+  final List<ListingMovieModel> trendingTV;
   final List<GenreModel> genres;
 }
 
 const homeModel = HomeModel(
-  trending: [
+  trendingMovies: [
     ListingMovieModel(
       id: "1",
       title: "Napoleon",
@@ -54,7 +56,7 @@ const homeModel = HomeModel(
       image: "/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
     ),
   ],
-  upcoming: [
+  upcomingMovies: [
     ListingMovieModel(
       id: "1",
       title: "Wonka",
@@ -100,7 +102,7 @@ const homeModel = HomeModel(
       image: "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
     ),
   ],
-  popular: [
+  popularMovies: [
     ListingMovieModel(
       id: "1",
       title: "Oppenheimer",
@@ -242,6 +244,19 @@ const homeModel = HomeModel(
     GenreModel(
       id: 37,
       title: "Western",
+    ),
+  ],
+  trendingTV: [
+    ListingMovieModel(
+      id: "1",
+      title: "Echo",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
     ),
   ],
 );

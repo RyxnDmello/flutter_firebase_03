@@ -4,11 +4,10 @@ import '../models/home_model.dart';
 import '../models/genre_model.dart';
 
 import '../widgets/home/home_app_bar.dart';
-import '../widgets/home/home_trending.dart';
-import '../widgets/home/home_button.dart';
+import '../widgets/home/home_trending_movies.dart';
+import '../widgets/home/home_upcoming_movies.dart';
+import '../widgets/home/home_popular_movies.dart';
 import '../widgets/home/home_genres.dart';
-import '../widgets/home/home_upcoming.dart';
-import '../widgets/home/home_popular.dart';
 
 import './genre.dart';
 
@@ -25,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       MaterialPageRoute(
         builder: (context) {
           return GenreScreen(
-            movies: homeModel.trending,
+            movies: homeModel.trendingMovies,
             genre: genre,
           );
         },
@@ -44,8 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Stack(
               children: [
-                HomeTrending(
-                  trending: homeModel.trending,
+                HomeTrendingMovies(
+                  trending: homeModel.trendingMovies,
                 ),
                 HomeAppBar(
                   onOpenSearch: () {},
@@ -57,26 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 25,
             ),
-            HomeButton(
-              image: "./lib/images/home/buttons/tv.png",
-              color: const Color.fromARGB(255, 0, 0, 50),
-              label: "Explore TV Series",
-              isSolid: true,
-              onTap: () {},
-            ),
-            const SizedBox(
-              height: 12.5,
-            ),
-            HomeButton(
-              image: "./lib/images/home/buttons/collection.png",
-              color: const Color.fromARGB(255, 0, 0, 50),
-              label: "Explore Collections",
-              isSolid: false,
-              onTap: () {},
-            ),
-            const SizedBox(
-              height: 25,
-            ),
             HomeGenres(
               onSelectGenre: _openGenreScreen,
               genres: homeModel.genres,
@@ -84,14 +63,14 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 25,
             ),
-            HomeUpcoming(
-              upcoming: homeModel.upcoming,
+            HomeUpcomingMovies(
+              upcoming: homeModel.upcomingMovies,
             ),
             const SizedBox(
               height: 25,
             ),
-            HomePopular(
-              popular: homeModel.popular,
+            HomePopularMovies(
+              popular: homeModel.popularMovies,
             ),
           ],
         ),
