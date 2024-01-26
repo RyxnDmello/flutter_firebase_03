@@ -31,8 +31,8 @@ class _HomeUpcomingMoviesState extends State<HomeUpcomingMovies>
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        right: 8,
-        left: 8,
+        right: 5,
+        left: 5,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -40,15 +40,18 @@ class _HomeUpcomingMoviesState extends State<HomeUpcomingMovies>
         children: [
           const Padding(
             padding: EdgeInsets.only(
-              right: 5,
-              left: 5,
+              right: 10,
+              left: 10,
             ),
             child: CatalogueTitle(
               title: "Coming Soon",
             ),
           ),
+          const SizedBox(
+            height: 5,
+          ),
           SizedBox(
-            height: 288,
+            height: 300,
             width: double.infinity,
             child: PageView.builder(
               padEnds: false,

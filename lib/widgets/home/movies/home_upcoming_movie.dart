@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './upcoming/home_upcoming_movie_image.dart';
+import './upcoming/home_upcoming_movie_fade.dart';
 import './upcoming/home_upcoming_movie_title.dart';
 import './upcoming/home_upcoming_movie_genre.dart';
 import './upcoming/home_upcoming_movie_rating.dart';
@@ -26,43 +26,36 @@ class HomeUpcomingMovie extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        clipBehavior: Clip.antiAlias,
-        margin: const EdgeInsets.only(
-          bottom: 10,
-          right: 5,
-          left: 5,
-          top: 10,
-        ),
+        clipBehavior: Clip.hardEdge,
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(image),
+            fit: BoxFit.cover,
+          ),
           boxShadow: const [
             BoxShadow(
-              color: Colors.black38,
-              offset: Offset(0, 5),
-              blurRadius: 5,
+              color: Colors.black45,
+              offset: Offset(0, 0),
+              blurRadius: 10,
             )
           ],
-          color: const Color.fromARGB(255, 0, 0, 25),
           borderRadius: BorderRadius.circular(5),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            HomeUpcomingMovieImage(
-              image: image,
-            ),
-            const SizedBox(
-              height: 10,
+            const HomeUpcomingFade(
+              height: 80,
             ),
             Padding(
               padding: const EdgeInsets.only(
-                bottom: 6,
-                right: 8,
-                left: 8,
+                left: 10,
+                right: 10,
+                bottom: 8,
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   HomeUpcomingMovieTitle(
                     title: title,
@@ -78,10 +71,10 @@ class HomeUpcomingMovie extends StatelessWidget {
                         rating: rating,
                       ),
                     ],
-                  ),
+                  )
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),

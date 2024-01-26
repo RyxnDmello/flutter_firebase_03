@@ -176,6 +176,63 @@ const homeModel = HomeModel(
       image: "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
     ),
   ],
+  trendingTV: [
+    ListingMovieModel(
+      id: "1",
+      title: "Echo",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
+    ),
+    ListingMovieModel(
+      id: "1",
+      title: "Echo",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
+    ),
+    ListingMovieModel(
+      id: "1",
+      title: "Echo",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
+    ),
+    ListingMovieModel(
+      id: "1",
+      title: "Echo",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
+    ),
+    ListingMovieModel(
+      id: "1",
+      title: "Echo",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
+    ),
+  ],
   genres: [
     GenreModel(
       id: 28,
@@ -244,19 +301,6 @@ const homeModel = HomeModel(
     GenreModel(
       id: 37,
       title: "Western",
-    ),
-  ],
-  trendingTV: [
-    ListingMovieModel(
-      id: "1",
-      title: "Echo",
-      genres: [
-        "Action",
-        "Adventure",
-      ],
-      rating: "6.2",
-      date: "2024-10-20",
-      image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
     ),
   ],
 );
