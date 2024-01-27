@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/listing_model.dart';
+import '../../models/catalogue_model.dart';
 
 import '../common/catalogue/catalogue_title.dart';
 
@@ -12,7 +12,7 @@ class HomePopularMovies extends StatelessWidget {
     super.key,
   });
 
-  final List<ListingMovieModel> popular;
+  final List<CatalogueMovieModel> popular;
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import './listing_model.dart';
+import 'catalogue_model.dart';
 import './genre_model.dart';
 
 class HomeModel {
@@ -7,19 +7,21 @@ class HomeModel {
     required this.upcomingMovies,
     required this.popularMovies,
     required this.trendingTV,
+    required this.popularTV,
     required this.genres,
   });
 
-  final List<ListingMovieModel> trendingMovies;
-  final List<ListingMovieModel> upcomingMovies;
-  final List<ListingMovieModel> popularMovies;
-  final List<ListingMovieModel> trendingTV;
+  final List<CatalogueMovieModel> trendingMovies;
+  final List<CatalogueMovieModel> upcomingMovies;
+  final List<CatalogueMovieModel> popularMovies;
+  final List<CatalogueMovieModel> trendingTV;
+  final List<CatalogueMovieModel> popularTV;
   final List<GenreModel> genres;
 }
 
 const homeModel = HomeModel(
   trendingMovies: [
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Napoleon",
       genres: [
@@ -31,7 +33,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Napoleon",
       genres: [
@@ -43,7 +45,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Napoleon",
       genres: [
@@ -57,7 +59,7 @@ const homeModel = HomeModel(
     ),
   ],
   upcomingMovies: [
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Wonka",
       genres: [
@@ -68,7 +70,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Wonka",
       genres: [
@@ -79,7 +81,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Wonka",
       genres: [
@@ -90,7 +92,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Wonka",
       genres: [
@@ -103,7 +105,7 @@ const homeModel = HomeModel(
     ),
   ],
   popularMovies: [
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Oppenheimer",
       genres: [
@@ -115,7 +117,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Oppenheimer",
       genres: [
@@ -127,7 +129,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Oppenheimer",
       genres: [
@@ -139,7 +141,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Oppenheimer",
       genres: [
@@ -151,7 +153,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Oppenheimer",
       genres: [
@@ -163,7 +165,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Oppenheimer",
       genres: [
@@ -177,7 +179,7 @@ const homeModel = HomeModel(
     ),
   ],
   trendingTV: [
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Echo",
       genres: [
@@ -188,7 +190,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Echo",
       genres: [
@@ -199,7 +201,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Echo",
       genres: [
@@ -210,7 +212,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Echo",
       genres: [
@@ -221,7 +223,7 @@ const homeModel = HomeModel(
       date: "2024-10-20",
       image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
     ),
-    ListingMovieModel(
+    CatalogueMovieModel(
       id: "1",
       title: "Echo",
       genres: [
@@ -231,6 +233,74 @@ const homeModel = HomeModel(
       rating: "6.2",
       date: "2024-10-20",
       image: "/u3ySnWqSjM3jedYgJZTR7RWRDDm.jpg",
+    ),
+  ],
+  popularTV: [
+    CatalogueMovieModel(
+      id: "1",
+      title: "Fuzuê",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+    ),
+    CatalogueMovieModel(
+      id: "1",
+      title: "Fuzuê",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+    ),
+    CatalogueMovieModel(
+      id: "1",
+      title: "Fuzuê",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+    ),
+    CatalogueMovieModel(
+      id: "1",
+      title: "Fuzuê",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+    ),
+    CatalogueMovieModel(
+      id: "1",
+      title: "Fuzuê",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+    ),
+    CatalogueMovieModel(
+      id: "1",
+      title: "Fuzuê",
+      genres: [
+        "Action",
+        "Adventure",
+      ],
+      rating: "6.2",
+      date: "2024-10-20",
+      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
     ),
   ],
   genres: [

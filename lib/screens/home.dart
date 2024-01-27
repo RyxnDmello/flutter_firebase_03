@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pixel_flix/widgets/home/home_trending_tv.dart';
 
 import '../models/home_model.dart';
 import '../models/genre_model.dart';
@@ -8,6 +7,8 @@ import '../widgets/home/home_app_bar.dart';
 import '../widgets/home/home_trending_movies.dart';
 import '../widgets/home/home_upcoming_movies.dart';
 import '../widgets/home/home_popular_movies.dart';
+import '../widgets/home/home_trending_tv.dart';
+import '../widgets/home/home_popular_tv.dart';
 import '../widgets/home/home_genres.dart';
 
 import './genre.dart';
@@ -78,6 +79,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             HomeTrendingTV(
               trending: homeModel.trendingTV,
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            HomePopularTV(
+              popular: homeModel.popularTV,
             ),
           ],
         ),

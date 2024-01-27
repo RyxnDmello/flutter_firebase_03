@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/listing_model.dart';
+import '../../models/catalogue_model.dart';
 
 import '../common/catalogue/catalogue_title.dart';
 import '../common/catalogue/catalogue_indicators.dart';
@@ -13,7 +13,7 @@ class HomeUpcomingMovies extends StatefulWidget {
     super.key,
   });
 
-  final List<ListingMovieModel> upcoming;
+  final List<CatalogueMovieModel> upcoming;
 
   @override
   State<HomeUpcomingMovies> createState() => _HomeUpcomingMoviesState();

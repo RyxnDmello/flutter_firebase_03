@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/listing_model.dart';
+import '../../models/catalogue_model.dart';
 
 import '../common/catalogue/catalogue_title.dart';
 import '../common/catalogue/catalogue_indicators.dart';
@@ -13,7 +13,7 @@ class HomeTrendingTV extends StatefulWidget {
     super.key,
   });
 
-  final List<ListingMovieModel> trending;
+  final List<CatalogueMovieModel> trending;
 
   @override
   State<HomeTrendingTV> createState() => _HomeTrendingTVState();
@@ -39,7 +39,7 @@ class _HomeTrendingTVState extends State<HomeTrendingTV>
             left: 15,
           ),
           child: CatalogueTitle(
-            title: "Trending TV",
+            title: "Trending TV Series",
           ),
         ),
         const SizedBox(

@@ -57,8 +57,8 @@ class HomeTrendingSeries extends StatelessWidget {
                 boxShadow: const [
                   BoxShadow(
                     color: Colors.black45,
-                    offset: Offset(5, 5),
-                    blurRadius: 10,
+                    offset: Offset(2.5, 2.5),
+                    blurRadius: 5,
                   )
                 ],
                 color: const Color.fromARGB(150, 0, 0, 0),

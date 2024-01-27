@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/listing_model.dart';
+import '../../models/catalogue_model.dart';
 
 import '../common/catalogue/catalogue_indicators.dart';
 
@@ -12,7 +12,7 @@ class HomeTrendingMovies extends StatefulWidget {
     super.key,
   });
 
-  final List<ListingMovieModel> trending;
+  final List<CatalogueMovieModel> trending;
 
   @override
   State<HomeTrendingMovies> createState() => _HomeTrendingMoviesState();

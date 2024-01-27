@@ -1,7 +1,7 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-class ListingMovieModel {
-  const ListingMovieModel({
+class CatalogueMovieModel {
+  const CatalogueMovieModel({
     required this.id,
     required this.title,
     required this.genres,
