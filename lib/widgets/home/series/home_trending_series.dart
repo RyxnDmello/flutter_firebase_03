@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-import './trending/home_trending_series_title.dart';
-import './trending/home_trending_series_genre.dart';
-import './trending/home_trending_series_rating.dart';
+import '../catalogue/catalogue_details.dart';
+import '../catalogue/details/catalogue_details_genre.dart';
+import '../catalogue/details/catalogue_details_rating.dart';
+import '../catalogue/details/catalogue_details_title.dart';
 
 class HomeTrendingSeries extends StatelessWidget {
   const HomeTrendingSeries({
+    required this.onSelectTV,
     required this.image,
     required this.title,
     required this.genre,
@@ -13,6 +15,7 @@ class HomeTrendingSeries extends StatelessWidget {
     super.key,
   });
 
+  final Future<void> Function() onSelectTV;
   final String title;
   final String genre;
   final String image;
@@ -22,21 +25,15 @@ class HomeTrendingSeries extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        CatalogueDetails(
           height: 300,
-          margin: const EdgeInsets.only(top: 5),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(image),
-              fit: BoxFit.cover,
-            ),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black45,
-                offset: Offset(0, 0),
-                blurRadius: 10,
-              ),
-            ],
+          image: image,
+          layout: null,
+          borderRadius: 0,
+          onSelect: onSelectTV,
+          shadowColor: Colors.black45,
+          margin: const EdgeInsets.only(
+            top: 5,
           ),
         ),
         Column(
@@ -68,17 +65,25 @@ class HomeTrendingSeries extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  HomeTrendingSeriesTitle(
-                    title: title,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 5,
+                    ),
+                    child: CatalogueDetailsTitle(
+                      title: title,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 2.5,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      HomeTrendingSeriesGenre(
+                      CatalogueDetailsGenre(
                         genre: genre,
                       ),
-                      HomeTrendingSeriesRating(
+                      CatalogueDetailsRating(
                         rating: rating,
                       ),
                     ],

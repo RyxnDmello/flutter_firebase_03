@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../models/catalogue_model.dart';
 
-import '../common/catalogue/catalogue_title.dart';
-import '../common/catalogue/catalogue_indicators.dart';
+import './catalogue/catalogue_title.dart';
+import './catalogue/catalogue_tabs.dart';
 
-import './tv/home_trending_series.dart';
+import './series/home_trending_series.dart';
 
 class HomeTrendingTV extends StatefulWidget {
   const HomeTrendingTV({
@@ -39,7 +39,7 @@ class _HomeTrendingTVState extends State<HomeTrendingTV>
             left: 15,
           ),
           child: CatalogueTitle(
-            title: "Trending TV Series",
+            title: "Trending Series",
           ),
         ),
         const SizedBox(
@@ -56,6 +56,7 @@ class _HomeTrendingTVState extends State<HomeTrendingTV>
                 genre: widget.trending[index].genre,
                 rating: widget.trending[index].rating,
                 image: widget.trending[index].imageURI,
+                onSelectTV: () async {},
               );
             },
           ),
@@ -67,7 +68,7 @@ class _HomeTrendingTVState extends State<HomeTrendingTV>
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CatalogueIndicators(
+            CatalogueTabs(
               pageLength: widget.trending.length,
               activePage: _activePage,
               vsync: this,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeTrendingMovieFade extends StatelessWidget {
-  const HomeTrendingMovieFade({
+class CatalogueDetailsFade extends StatelessWidget {
+  const CatalogueDetailsFade({
     required this.height,
     super.key,
   });
@@ -16,11 +16,10 @@ class HomeTrendingMovieFade extends StatelessWidget {
       bottom: 0,
       child: Container(
         height: height,
-        width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(225, 0, 0, 0),
+              Color.fromARGB(200, 0, 0, 0),
               Colors.transparent,
             ],
             begin: Alignment.bottomCenter,

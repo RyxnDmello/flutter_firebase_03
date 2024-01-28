@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CatalogueIndicators extends StatelessWidget {
-  const CatalogueIndicators({
+class CatalogueTabs extends StatelessWidget {
+  const CatalogueTabs({
     required this.activePage,
     required this.pageLength,
     required this.vsync,

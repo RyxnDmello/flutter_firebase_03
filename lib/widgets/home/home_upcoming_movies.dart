@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../models/catalogue_model.dart';
 
-import '../common/catalogue/catalogue_title.dart';
-import '../common/catalogue/catalogue_indicators.dart';
+import './catalogue/catalogue_title.dart';
+import './catalogue/catalogue_tabs.dart';
 
 import './movies/home_upcoming_movie.dart';
 
@@ -67,7 +67,7 @@ class _HomeUpcomingMoviesState extends State<HomeUpcomingMovies>
                   image: widget.upcoming[index].imageURI,
                   rating: widget.upcoming[index].rating,
                   genre: widget.upcoming[index].genre,
-                  onTap: () {},
+                  onSelectMovie: () async {},
                 );
               },
             ),
@@ -79,7 +79,7 @@ class _HomeUpcomingMoviesState extends State<HomeUpcomingMovies>
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CatalogueIndicators(
+              CatalogueTabs(
                 pageLength: widget.upcoming.length,
                 activePage: _activePage,
                 vsync: this,

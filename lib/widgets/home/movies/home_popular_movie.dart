@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import './popular/home_popular_movie_title.dart';
-import './popular/home_popular_movie_genre.dart';
-import './popular/home_popular_movie_rating.dart';
-import './popular/home_popular_movie_fade.dart';
+import '../catalogue/catalogue_details.dart';
+import '../catalogue/details/catalogue_details_fade.dart';
+import '../catalogue/details/catalogue_details_title.dart';
+import '../catalogue/details/catalogue_details_genre.dart';
+import '../catalogue/details/catalogue_details_rating.dart';
 
 class HomePopularMovie extends StatelessWidget {
   const HomePopularMovie({
-    required this.onTap,
+    required this.onSelectMovie,
     required this.image,
     required this.title,
     required this.genre,
@@ -15,7 +16,7 @@ class HomePopularMovie extends StatelessWidget {
     super.key,
   });
 
-  final void Function() onTap;
+  final Future<void> Function() onSelectMovie;
   final String image;
   final String title;
   final String genre;
@@ -23,56 +24,49 @@ class HomePopularMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(image),
-            fit: BoxFit.cover,
+    return CatalogueDetails(
+      image: image,
+      onSelect: onSelectMovie,
+      layout: Stack(
+        children: [
+          const CatalogueDetailsFade(
+            height: 100,
           ),
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromARGB(200, 0, 0, 0),
-              offset: Offset(0, 5),
-              blurRadius: 10,
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 6.5,
+              right: 6.5,
+              bottom: 6.5,
             ),
-          ],
-          borderRadius: BorderRadius.circular(5),
-          color: Colors.black,
-        ),
-        child: Stack(
-          children: [
-            const HomePopularMovieFade(
-              height: 80,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                CatalogueDetailsTitle(
+                  title: title,
+                  fontSize: 16,
+                ),
+                const SizedBox(
+                  height: 2.5,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CatalogueDetailsGenre(
+                      genre: genre,
+                      fontSize: 16,
+                    ),
+                    CatalogueDetailsRating(
+                      rating: rating,
+                      fontSize: 16,
+                    ),
+                  ],
+                )
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  HomePopularMovieTitle(
-                    title: title,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      HomePopularMovieGenre(
-                        genre: genre,
-                      ),
-                      HomePopularMovieRating(
-                        rating: rating,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

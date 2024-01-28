@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import './upcoming/home_upcoming_movie_fade.dart';
-import './upcoming/home_upcoming_movie_title.dart';
-import './upcoming/home_upcoming_movie_genre.dart';
-import './upcoming/home_upcoming_movie_rating.dart';
+import '../catalogue/catalogue_details.dart';
+import '../catalogue/details/catalogue_details_fade.dart';
+import '../catalogue/details/catalogue_details_title.dart';
+import '../catalogue/details/catalogue_details_genre.dart';
+import '../catalogue/details/catalogue_details_rating.dart';
 
 class HomeUpcomingMovie extends StatelessWidget {
   const HomeUpcomingMovie({
-    required this.onTap,
+    required this.onSelectMovie,
     required this.rating,
     required this.image,
     required this.title,
@@ -15,7 +16,7 @@ class HomeUpcomingMovie extends StatelessWidget {
     super.key,
   });
 
-  final void Function() onTap;
+  final Future<void> Function() onSelectMovie;
   final String image;
   final String title;
   final String rating;
@@ -23,60 +24,47 @@ class HomeUpcomingMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        clipBehavior: Clip.hardEdge,
-        margin: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(image),
-            fit: BoxFit.cover,
+    return CatalogueDetails(
+      image: image,
+      onSelect: onSelectMovie,
+      shadowColor: Colors.black54,
+      margin: const EdgeInsets.all(10),
+      layout: Stack(
+        children: [
+          const CatalogueDetailsFade(
+            height: 100,
           ),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black45,
-              offset: Offset(0, 0),
-              blurRadius: 10,
-            )
-          ],
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: Stack(
-          children: [
-            const HomeUpcomingFade(
-              height: 80,
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 8,
+              right: 8,
+              bottom: 5,
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 10,
-                right: 10,
-                bottom: 8,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  HomeUpcomingMovieTitle(
-                    title: title,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      HomeUpcomingMovieGenre(
-                        genre: genre,
-                      ),
-                      HomeUpcomingMovieRating(
-                        rating: rating,
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                CatalogueDetailsTitle(
+                  title: title,
+                  fontSize: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CatalogueDetailsGenre(
+                      genre: genre,
+                      fontSize: 16,
+                    ),
+                    CatalogueDetailsRating(
+                      rating: rating,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/catalogue_model.dart';
 
-import '../common/catalogue/catalogue_title.dart';
+import './catalogue/catalogue_title.dart';
 
 import './movies/home_popular_movie.dart';
 
@@ -48,7 +48,7 @@ class HomePopularMovies extends StatelessWidget {
                 image: popular[index].imageURI,
                 genre: popular[index].genres[0],
                 rating: popular[index].rating,
-                onTap: () {},
+                onSelectMovie: () async {},
               );
             },
           ),

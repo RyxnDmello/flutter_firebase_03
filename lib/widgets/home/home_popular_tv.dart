@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../models/catalogue_model.dart';
 
-import '../common/catalogue/catalogue_title.dart';
+import './catalogue/catalogue_title.dart';
 
-import './tv/home_popular_series.dart';
+import './series/home_popular_series.dart';
 
 class HomePopularTV extends StatefulWidget {
   const HomePopularTV({
@@ -58,7 +58,7 @@ class _HomePopularTVState extends State<HomePopularTV> {
             left: 15,
           ),
           child: CatalogueTitle(
-            title: "Popular TV Series",
+            title: "Popular Series",
           ),
         ),
         const SizedBox(
@@ -79,9 +79,10 @@ class _HomePopularTVState extends State<HomePopularTV> {
                 rating: _popular[index].first.rating,
                 title: _popular[index].first.title,
                 genre: _popular[index].first.genre,
-                onSelectTV: () {},
+                onSelectTV: () async {},
                 isExpanded: false,
-                height: 150,
+                fadeHeight: 125,
+                height: 160,
               );
             }
 
@@ -94,8 +95,9 @@ class _HomePopularTVState extends State<HomePopularTV> {
                   genre: _popular[index][0].genres[0],
                   rating: _popular[index][0].rating,
                   title: _popular[index][0].title,
-                  onSelectTV: () {},
+                  onSelectTV: () async {},
                   isExpanded: true,
+                  fadeHeight: 125,
                   height: 200,
                 ),
                 const SizedBox(
@@ -106,8 +108,9 @@ class _HomePopularTVState extends State<HomePopularTV> {
                   genre: _popular[index][1].genres[0],
                   rating: _popular[index][1].rating,
                   title: _popular[index][1].title,
-                  onSelectTV: () {},
+                  onSelectTV: () async {},
                   isExpanded: true,
+                  fadeHeight: 125,
                   height: 200,
                 ),
               ],

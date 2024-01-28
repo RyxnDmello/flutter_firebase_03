@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/catalogue_model.dart';
 
-import '../common/catalogue/catalogue_indicators.dart';
+import './catalogue/catalogue_tabs.dart';
 
 import './movies/home_trending_movie.dart';
 
@@ -50,7 +50,7 @@ class _HomeTrendingMoviesState extends State<HomeTrendingMovies>
                 image: widget.trending[index].imageURI,
                 genre: widget.trending[index].genre,
                 rating: widget.trending[index].rating,
-                onTap: () {},
+                onSelectMovie: () async {},
               );
             },
           ),
@@ -62,7 +62,7 @@ class _HomeTrendingMoviesState extends State<HomeTrendingMovies>
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CatalogueIndicators(
+            CatalogueTabs(
               pageLength: widget.trending.length,
               activePage: _activePage,
               vsync: this,

@@ -6,44 +6,45 @@ import '../catalogue/details/catalogue_details_title.dart';
 import '../catalogue/details/catalogue_details_genre.dart';
 import '../catalogue/details/catalogue_details_rating.dart';
 
-class HomeTrendingMovie extends StatelessWidget {
-  const HomeTrendingMovie({
-    required this.onSelectMovie,
-    required this.image,
+class HomePopularSeries extends StatelessWidget {
+  const HomePopularSeries({
+    required this.isExpanded,
+    required this.onSelectTV,
+    required this.fadeHeight,
+    required this.height,
     required this.title,
+    required this.image,
     required this.genre,
     required this.rating,
     super.key,
   });
 
-  final Future<void> Function() onSelectMovie;
-  final String rating;
-  final String image;
+  final Future<void> Function() onSelectTV;
+  final bool isExpanded;
+  final double fadeHeight;
+  final double height;
   final String title;
+  final String image;
   final String genre;
+  final String rating;
 
   @override
   Widget build(BuildContext context) {
-    return CatalogueDetails(
+    Widget series = CatalogueDetails(
       image: image,
-      shadowBlur: 10,
-      borderRadius: 0,
-      onSelect: onSelectMovie,
+      height: height,
+      onSelect: onSelectTV,
       shadowColor: Colors.black45,
-      shadowOffset: const Offset(0, 5),
-      margin: const EdgeInsets.only(
-        bottom: 15,
-      ),
       layout: Stack(
         children: [
-          const CatalogueDetailsFade(
-            height: 100,
+          CatalogueDetailsFade(
+            height: fadeHeight,
           ),
           Padding(
             padding: const EdgeInsets.only(
-              bottom: 10,
-              right: 10,
-              left: 10,
+              left: 8,
+              right: 8,
+              bottom: 5,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -51,6 +52,7 @@ class HomeTrendingMovie extends StatelessWidget {
               children: [
                 CatalogueDetailsTitle(
                   title: title,
+                  fontSize: isExpanded ? 18 : 25,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,19 +60,26 @@ class HomeTrendingMovie extends StatelessWidget {
                   children: [
                     CatalogueDetailsGenre(
                       genre: genre,
+                      fontSize: isExpanded ? 18 : 20,
                     ),
                     CatalogueDetailsRating(
                       rating: rating,
-                      iconSize: 24,
-                      fontSize: 20,
+                      fontSize: isExpanded ? 18 : 20,
+                      iconSize: isExpanded ? 20 : 24,
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),
         ],
       ),
+    );
+
+    if (!isExpanded) return series;
+
+    return Expanded(
+      child: series,
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'catalogue_model.dart';
+import './catalogue_model.dart';
 import './genre_model.dart';
 
 class HomeModel {
@@ -238,69 +238,69 @@ const homeModel = HomeModel(
   popularTV: [
     CatalogueMovieModel(
       id: "1",
-      title: "Fuzuê",
+      title: "Airbender",
       genres: [
         "Action",
         "Adventure",
       ],
       rating: "6.2",
       date: "2024-10-20",
-      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+      image: "/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
     ),
     CatalogueMovieModel(
       id: "1",
-      title: "Fuzuê",
+      title: "Airbender",
       genres: [
         "Action",
         "Adventure",
       ],
       rating: "6.2",
       date: "2024-10-20",
-      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+      image: "/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
     ),
     CatalogueMovieModel(
       id: "1",
-      title: "Fuzuê",
+      title: "Airbender",
       genres: [
         "Action",
         "Adventure",
       ],
       rating: "6.2",
       date: "2024-10-20",
-      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+      image: "/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
     ),
     CatalogueMovieModel(
       id: "1",
-      title: "Fuzuê",
+      title: "Airbender",
       genres: [
         "Action",
         "Adventure",
       ],
       rating: "6.2",
       date: "2024-10-20",
-      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+      image: "/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
     ),
     CatalogueMovieModel(
       id: "1",
-      title: "Fuzuê",
+      title: "Airbender",
       genres: [
         "Action",
         "Adventure",
       ],
       rating: "6.2",
       date: "2024-10-20",
-      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+      image: "/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
     ),
     CatalogueMovieModel(
       id: "1",
-      title: "Fuzuê",
+      title: "Airbender",
       genres: [
         "Action",
         "Adventure",
       ],
       rating: "6.2",
       date: "2024-10-20",
-      image: "/2Bkqjc9tNWo3KLr1aRYyJ7vMQtM.jpg",
+      image: "/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
     ),
   ],
   genres: [
