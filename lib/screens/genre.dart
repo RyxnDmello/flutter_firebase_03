@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../models/catalogue_model.dart';
 import '../models/genre_model.dart';
+
+import '../models/catalogue/catalogue_product_model.dart';
 
 import '../widgets/genre/genre_header.dart';
 import '../widgets/genre/genre_app_bar.dart';
@@ -16,7 +17,7 @@ class GenreScreen extends StatefulWidget {
     super.key,
   });
 
-  final List<CatalogueMovieModel> movies;
+  final List<CatalogueProductModel> movies;
   final GenreModel genre;
 
   @override
@@ -24,7 +25,7 @@ class GenreScreen extends StatefulWidget {
 }
 
 class _GenreScreenState extends State<GenreScreen> {
-  List<CatalogueMovieModel> _movies = [];
+  List<CatalogueProductModel> _movies = [];
 
   @override
   void initState() {
@@ -38,7 +39,7 @@ class _GenreScreenState extends State<GenreScreen> {
       return;
     }
 
-    List<CatalogueMovieModel> filteredMovies = [];
+    List<CatalogueProductModel> filteredMovies = [];
 
     for (final movie in widget.movies) {
       if (!movie.title.toLowerCase().startsWith(input)) continue;

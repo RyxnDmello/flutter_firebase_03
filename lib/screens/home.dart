@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/home_model.dart';
+import '../models/catalogue_model.dart';
 import '../models/genre_model.dart';
 
 import '../widgets/home/home_app_bar.dart';
@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
       MaterialPageRoute(
         builder: (context) {
           return GenreScreen(
-            movies: homeModel.trendingMovies,
+            movies: catalogues.trendingMovies,
             genre: genre,
           );
         },
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Stack(
               children: [
                 HomeTrendingMovies(
-                  trending: homeModel.trendingMovies,
+                  trending: catalogues.trendingMovies,
                 ),
                 HomeAppBar(
                   onOpenSearch: () {},
@@ -60,31 +60,31 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             HomeGenres(
               onSelectGenre: _openGenreScreen,
-              genres: homeModel.genres,
+              genres: movieGenres,
             ),
             const SizedBox(
               height: 25,
             ),
             HomeUpcomingMovies(
-              upcoming: homeModel.upcomingMovies,
+              upcoming: catalogues.upcomingMovies,
             ),
             const SizedBox(
               height: 25,
             ),
             HomePopularMovies(
-              popular: homeModel.popularMovies,
+              popular: catalogues.popularMovies,
             ),
             const SizedBox(
               height: 25,
             ),
             HomeTrendingTV(
-              trending: homeModel.trendingTV,
+              trending: catalogues.trendingTV,
             ),
             const SizedBox(
               height: 25,
             ),
             HomePopularTV(
-              popular: homeModel.popularTV,
+              popular: catalogues.popularTV,
             ),
           ],
         ),

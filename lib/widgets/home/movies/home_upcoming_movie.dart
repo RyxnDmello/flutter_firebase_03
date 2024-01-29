@@ -27,7 +27,7 @@ class HomeUpcomingMovie extends StatelessWidget {
     return CatalogueDetails(
       image: image,
       onSelect: onSelectMovie,
-      shadowColor: Colors.black54,
+      shadowColor: Colors.black45,
       margin: const EdgeInsets.all(10),
       layout: Stack(
         children: [

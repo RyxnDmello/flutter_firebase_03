@@ -52,7 +52,7 @@ class HomePopularSeries extends StatelessWidget {
               children: [
                 CatalogueDetailsTitle(
                   title: title,
-                  fontSize: isExpanded ? 18 : 25,
+                  fontSize: isExpanded ? 18 : 22,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,12 +60,12 @@ class HomePopularSeries extends StatelessWidget {
                   children: [
                     CatalogueDetailsGenre(
                       genre: genre,
-                      fontSize: isExpanded ? 18 : 20,
+                      fontSize: 18,
                     ),
                     CatalogueDetailsRating(
                       rating: rating,
-                      fontSize: isExpanded ? 18 : 20,
-                      iconSize: isExpanded ? 20 : 24,
+                      fontSize: 18,
+                      iconSize: 20,
                     ),
                   ],
                 )

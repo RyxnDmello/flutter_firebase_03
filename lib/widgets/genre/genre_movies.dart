@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/catalogue_model.dart';
+import '../../models/catalogue/catalogue_product_model.dart';
 
 import './movies/genre_movie.dart';
 
@@ -10,7 +10,7 @@ class GenreMovies extends StatelessWidget {
     super.key,
   });
 
-  final List<CatalogueMovieModel> trending;
+  final List<CatalogueProductModel> trending;
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/catalogue_model.dart';
+import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_title.dart';
 import './catalogue/catalogue_tabs.dart';
@@ -13,7 +13,7 @@ class HomeUpcomingMovies extends StatefulWidget {
     super.key,
   });
 
-  final List<CatalogueMovieModel> upcoming;
+  final List<CatalogueProductModel> upcoming;
 
   @override
   State<HomeUpcomingMovies> createState() => _HomeUpcomingMoviesState();
@@ -66,7 +66,7 @@ class _HomeUpcomingMoviesState extends State<HomeUpcomingMovies>
                   title: widget.upcoming[index].title,
                   image: widget.upcoming[index].imageURI,
                   rating: widget.upcoming[index].rating,
-                  genre: widget.upcoming[index].genre,
+                  genre: widget.upcoming[index].genres[0],
                   onSelectMovie: () async {},
                 );
               },

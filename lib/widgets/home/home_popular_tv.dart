@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/catalogue_model.dart';
+import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_title.dart';
 
@@ -12,14 +12,14 @@ class HomePopularTV extends StatefulWidget {
     super.key,
   });
 
-  final List<CatalogueMovieModel> popular;
+  final List<CatalogueProductModel> popular;
 
   @override
   State<HomePopularTV> createState() => _HomePopularTVState();
 }
 
 class _HomePopularTVState extends State<HomePopularTV> {
-  List<List<CatalogueMovieModel>> _popular = [];
+  List<List<CatalogueProductModel>> _popular = [];
 
   @override
   void initState() {
@@ -27,8 +27,8 @@ class _HomePopularTVState extends State<HomePopularTV> {
     _popular = _custom;
   }
 
-  List<List<CatalogueMovieModel>> get _custom {
-    List<List<CatalogueMovieModel>> custom = [];
+  List<List<CatalogueProductModel>> get _custom {
+    List<List<CatalogueProductModel>> custom = [];
     bool isRow = true;
     int row = 0;
 

@@ -27,6 +27,7 @@ class HomePopularMovie extends StatelessWidget {
     return CatalogueDetails(
       image: image,
       onSelect: onSelectMovie,
+      shadowColor: Colors.black45,
       layout: Stack(
         children: [
           const CatalogueDetailsFade(
@@ -34,8 +35,8 @@ class HomePopularMovie extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 6.5,
-              right: 6.5,
+              left: 8,
+              right: 8,
               bottom: 6.5,
             ),
             child: Column(
