@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class GenreMovieRating extends StatelessWidget {
-  const GenreMovieRating({
+class GenreCatalogueProductRating extends StatelessWidget {
+  const GenreCatalogueProductRating({
     required this.rating,
     super.key,
   });
@@ -17,8 +17,8 @@ class GenreMovieRating extends StatelessWidget {
       children: [
         const Icon(
           Icons.favorite,
+          size: 20,
           color: Color.fromARGB(255, 255, 0, 0),
-          size: 22.5,
         ),
         const SizedBox(
           width: 2.5,
@@ -26,8 +26,8 @@ class GenreMovieRating extends StatelessWidget {
         Text(
           rating,
           style: GoogleFonts.montserrat(
+            color: const Color.fromARGB(255, 225, 225, 225),
             fontWeight: FontWeight.w500,
-            color: Colors.white,
             letterSpacing: 0.5,
             fontSize: 18,
           ),

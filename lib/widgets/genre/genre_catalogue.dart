@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../models/catalogue/catalogue_product_model.dart';
 
-import './movies/genre_movie.dart';
+import './catalogue/genre_catalogue_product.dart';
 
-class GenreMovies extends StatelessWidget {
-  const GenreMovies({
+class GenreCatalogue extends StatelessWidget {
+  const GenreCatalogue({
     required this.trending,
     super.key,
   });
@@ -23,12 +23,12 @@ class GenreMovies extends StatelessWidget {
         left: 15,
       ),
       itemBuilder: (context, index) {
-        return GenreMovie(
+        return GenreCatalogueProduct(
           title: trending[index].title,
           image: trending[index].imageURI,
           rating: trending[index].rating,
           genre: trending[index].genre,
-          onSelectMovie: () {},
+          onSelectMovie: () async {},
         );
       },
       separatorBuilder: (context, index) {

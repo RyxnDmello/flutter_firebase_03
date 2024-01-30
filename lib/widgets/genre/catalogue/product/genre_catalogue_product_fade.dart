@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GenreMovieFade extends StatelessWidget {
-  const GenreMovieFade({
+class GenreCatalogueProductFade extends StatelessWidget {
+  const GenreCatalogueProductFade({
     required this.height,
     super.key,
   });
@@ -16,11 +16,10 @@ class GenreMovieFade extends StatelessWidget {
       bottom: 0,
       child: Container(
         height: height,
-        width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(200, 0, 0, 0),
+              Colors.black45,
               Colors.transparent,
             ],
             begin: Alignment.bottomCenter,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'appBar/genre_app_bar_button.dart';
+import './appBar/genre_app_bar_button.dart';
 
 class GenreAppBar extends StatelessWidget {
   const GenreAppBar({
@@ -12,15 +12,22 @@ class GenreAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        GenreAppBarButton(
-          onTap: onBack,
-          icon: Icons.arrow_back,
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 10,
         ),
-      ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GenreAppBarButton(
+              onBack: onBack,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

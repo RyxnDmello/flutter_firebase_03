@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import './movie/genre_movie_fade.dart';
-import './movie/genre_movie_title.dart';
-import './movie/genre_movie_genres.dart';
-import './movie/genre_movie_rating.dart';
+import './product/genre_catalogue_product_fade.dart';
+import './product/genre_catalogue_product_title.dart';
+import './product/genre_catalogue_product_genre.dart';
+import './product/genre_catalogue_product_rating.dart';
 
-class GenreMovie extends StatelessWidget {
-  const GenreMovie({
+class GenreCatalogueProduct extends StatelessWidget {
+  const GenreCatalogueProduct({
     required this.onSelectMovie,
     required this.title,
     required this.image,
@@ -15,7 +15,7 @@ class GenreMovie extends StatelessWidget {
     super.key,
   });
 
-  final void Function() onSelectMovie;
+  final Future<void> Function() onSelectMovie;
   final String title;
   final String image;
   final String genre;
@@ -46,34 +46,34 @@ class GenreMovie extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            const GenreMovieFade(
-              height: 80,
+            const GenreCatalogueProductFade(
+              height: 100,
             ),
             Padding(
               padding: const EdgeInsets.only(
-                bottom: 6.5,
-                right: 10,
                 left: 10,
+                right: 10,
+                bottom: 2.5,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GenreMovieTitle(
+                  GenreCatalogueProductTitle(
                     title: title,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      GenreMovieGenres(
-                        title: genre,
+                      GenreCatalogueProductGenre(
+                        genre: genre,
                       ),
-                      GenreMovieRating(
+                      GenreCatalogueProductRating(
                         rating: rating,
                       ),
                     ],
-                  ),
+                  )
                 ],
               ),
             )

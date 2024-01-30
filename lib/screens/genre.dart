@@ -4,11 +4,11 @@ import '../models/genre_model.dart';
 
 import '../models/catalogue/catalogue_product_model.dart';
 
-import '../widgets/genre/genre_header.dart';
+import '../widgets/genre/genre_background.dart';
 import '../widgets/genre/genre_app_bar.dart';
 import '../widgets/genre/genre_title.dart';
 import '../widgets/genre/genre_search.dart';
-import '../widgets/genre/genre_movies.dart';
+import '../widgets/genre/genre_catalogue.dart';
 
 class GenreScreen extends StatefulWidget {
   const GenreScreen({
@@ -42,7 +42,7 @@ class _GenreScreenState extends State<GenreScreen> {
     List<CatalogueProductModel> filteredMovies = [];
 
     for (final movie in widget.movies) {
-      if (!movie.title.toLowerCase().startsWith(input)) continue;
+      if (!movie.title.toLowerCase().startsWith(input.toLowerCase())) continue;
       filteredMovies.add(movie);
     }
 
@@ -57,39 +57,38 @@ class _GenreScreenState extends State<GenreScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(bottom: 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.start,
+        padding: const EdgeInsets.only(
+          bottom: 25,
+        ),
+        child: Stack(
           children: [
-            GenreHeader(
-              height: 195,
-              image: "./lib/images/genre/header.png",
-              group: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GenreAppBar(
-                    onBack: _closeGenreScreen,
-                  ),
-                  GenreTitle(
-                    title: widget.genre.title,
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  GenreSearch(
-                    onSearch: _search,
-                  ),
-                ],
-              ),
+            const GenreBackground(
+              height: 400,
             ),
-            const SizedBox(
-              height: 25,
-            ),
-            GenreMovies(
-              trending: _movies,
-            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GenreAppBar(
+                  onBack: _closeGenreScreen,
+                ),
+                GenreTitle(
+                  title: widget.genre.title,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                GenreSearch(
+                  onSearch: _search,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                GenreCatalogue(
+                  trending: _movies,
+                ),
+              ],
+            )
           ],
         ),
       ),
