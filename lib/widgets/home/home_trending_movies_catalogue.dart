@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../models/catalogue/catalogue_product_model.dart';
 
-import './catalogue/catalogue_title.dart';
 import './catalogue/catalogue_tabs.dart';
 
-import './series/home_trending_series.dart';
+import './products/home_trending_movie.dart';
 
-class HomeTrendingTV extends StatefulWidget {
-  const HomeTrendingTV({
+class HomeTrendingMoviesCatalogue extends StatefulWidget {
+  const HomeTrendingMoviesCatalogue({
     required this.trending,
     super.key,
   });
@@ -16,11 +15,17 @@ class HomeTrendingTV extends StatefulWidget {
   final List<CatalogueProductModel> trending;
 
   @override
-  State<HomeTrendingTV> createState() => _HomeTrendingTVState();
+  State<HomeTrendingMoviesCatalogue> createState() =>
+      _HomeTrendingMoviesCatalogueState();
 }
 
-class _HomeTrendingTVState extends State<HomeTrendingTV>
-    with TickerProviderStateMixin {
+class _HomeTrendingMoviesCatalogueState
+    extends State<HomeTrendingMoviesCatalogue> with TickerProviderStateMixin {
+  final _pageController = PageController(
+    viewportFraction: 1,
+    initialPage: 0,
+  );
+
   int _activePage = 0;
 
   void _onPageChanged(int nextPage) {
@@ -33,36 +38,26 @@ class _HomeTrendingTVState extends State<HomeTrendingTV>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
-            right: 15,
-            left: 15,
-          ),
-          child: CatalogueTitle(
-            title: "Trending Series",
-          ),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
         SizedBox(
-          height: 350,
+          height: 450,
+          width: double.infinity,
           child: PageView.builder(
-            itemCount: widget.trending.length,
             onPageChanged: _onPageChanged,
+            controller: _pageController,
+            itemCount: widget.trending.length,
             itemBuilder: (context, index) {
-              return HomeTrendingSeries(
+              return HomeTrendingMovie(
                 title: widget.trending[index].title,
+                image: widget.trending[index].imageURI,
                 genre: widget.trending[index].genre,
                 rating: widget.trending[index].rating,
-                image: widget.trending[index].imageURI,
-                onSelectTV: () async {},
+                onSelectMovie: () async {},
               );
             },
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 10,
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,

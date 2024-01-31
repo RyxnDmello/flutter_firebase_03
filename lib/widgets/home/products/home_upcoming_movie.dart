@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../catalogue/catalogue_details.dart';
-import '../catalogue/details/catalogue_details_fade.dart';
-import '../catalogue/details/catalogue_details_title.dart';
-import '../catalogue/details/catalogue_details_genre.dart';
-import '../catalogue/details/catalogue_details_rating.dart';
+import '../catalogue/catalogue_product.dart';
+import '../catalogue/product/catalogue_product_fade.dart';
+import '../catalogue/product/catalogue_product_title.dart';
+import '../catalogue/product/catalogue_product_genre.dart';
+import '../catalogue/product/catalogue_product_rating.dart';
 
 class HomeUpcomingMovie extends StatelessWidget {
   const HomeUpcomingMovie({
@@ -24,14 +24,14 @@ class HomeUpcomingMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CatalogueDetails(
+    return CatalogueProduct(
       image: image,
       onSelect: onSelectMovie,
       shadowColor: Colors.black45,
       margin: const EdgeInsets.all(10),
       layout: Stack(
         children: [
-          const CatalogueDetailsFade(
+          const CatalogueProductFade(
             height: 100,
           ),
           Padding(
@@ -44,7 +44,7 @@ class HomeUpcomingMovie extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CatalogueDetailsTitle(
+                CatalogueProductTitle(
                   title: title,
                   fontSize: 20,
                 ),
@@ -52,11 +52,11 @@ class HomeUpcomingMovie extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CatalogueDetailsGenre(
+                    CatalogueProductGenre(
                       genre: genre,
                       fontSize: 16,
                     ),
-                    CatalogueDetailsRating(
+                    CatalogueProductRating(
                       rating: rating,
                     ),
                   ],

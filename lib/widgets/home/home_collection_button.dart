@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeButton extends StatelessWidget {
-  const HomeButton({
+class HomeCollectionButton extends StatelessWidget {
+  const HomeCollectionButton({
     required this.isSolid,
     required this.onTap,
     required this.label,

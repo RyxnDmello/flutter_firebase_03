@@ -4,12 +4,12 @@ import '../models/catalogue_model.dart';
 import '../models/genre_model.dart';
 
 import '../widgets/home/home_app_bar.dart';
-import '../widgets/home/home_trending_movies.dart';
-import '../widgets/home/home_upcoming_movies.dart';
-import '../widgets/home/home_popular_movies.dart';
-import '../widgets/home/home_trending_tv.dart';
-import '../widgets/home/home_popular_tv.dart';
-import '../widgets/home/home_genres.dart';
+import '../widgets/home/home_trending_movies_catalogue.dart';
+import '../widgets/home/home_trending_series_catalogue.dart';
+import '../widgets/home/home_popular_series_catalogue.dart';
+import '../widgets/home/home_popular_movies_catalogue.dart';
+import '../widgets/home/home_upcoming_movies_catalogue.dart';
+import '../widgets/home/home_genres_catalogue.dart';
 
 import './genre.dart';
 
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Stack(
               children: [
-                HomeTrendingMovies(
+                HomeTrendingMoviesCatalogue(
                   trending: catalogues.trendingMovies,
                 ),
                 HomeAppBar(
@@ -58,33 +58,33 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 25,
             ),
-            HomeGenres(
+            HomeGenresCatalogue(
               onSelectGenre: _openGenreScreen,
               genres: movieGenres,
             ),
             const SizedBox(
               height: 25,
             ),
-            HomeUpcomingMovies(
+            HomeUpcomingMoviesCatalogue(
               upcoming: catalogues.upcomingMovies,
             ),
             const SizedBox(
               height: 25,
             ),
-            HomePopularMovies(
+            HomePopularMoviesCatalogue(
               popular: catalogues.popularMovies,
             ),
             const SizedBox(
               height: 25,
             ),
-            HomeTrendingTV(
-              trending: catalogues.trendingTV,
+            HomeTrendingSeriesCatalogue(
+              trending: catalogues.trendingSeries,
             ),
             const SizedBox(
               height: 25,
             ),
-            HomePopularTV(
-              popular: catalogues.popularTV,
+            HomePopularSeriesCatalogue(
+              popular: catalogues.popularSeries,
             ),
           ],
         ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../catalogue/catalogue_details.dart';
-import '../catalogue/details/catalogue_details_fade.dart';
-import '../catalogue/details/catalogue_details_title.dart';
-import '../catalogue/details/catalogue_details_genre.dart';
-import '../catalogue/details/catalogue_details_rating.dart';
+import '../catalogue/catalogue_product.dart';
+import '../catalogue/product/catalogue_product_fade.dart';
+import '../catalogue/product/catalogue_product_title.dart';
+import '../catalogue/product/catalogue_product_genre.dart';
+import '../catalogue/product/catalogue_product_rating.dart';
 
 class HomePopularSeries extends StatelessWidget {
   const HomePopularSeries({
@@ -30,14 +30,14 @@ class HomePopularSeries extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget series = CatalogueDetails(
+    Widget series = CatalogueProduct(
       image: image,
       height: height,
       onSelect: onSelectTV,
       shadowColor: Colors.black45,
       layout: Stack(
         children: [
-          CatalogueDetailsFade(
+          CatalogueProductFade(
             height: fadeHeight,
           ),
           Padding(
@@ -50,7 +50,7 @@ class HomePopularSeries extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CatalogueDetailsTitle(
+                CatalogueProductTitle(
                   title: title,
                   fontSize: isExpanded ? 18 : 22,
                 ),
@@ -58,11 +58,11 @@ class HomePopularSeries extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CatalogueDetailsGenre(
+                    CatalogueProductGenre(
                       genre: genre,
                       fontSize: 18,
                     ),
-                    CatalogueDetailsRating(
+                    CatalogueProductRating(
                       rating: rating,
                       fontSize: 18,
                       iconSize: 20,

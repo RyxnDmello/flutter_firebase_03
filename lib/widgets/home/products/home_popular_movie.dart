@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../catalogue/catalogue_details.dart';
-import '../catalogue/details/catalogue_details_fade.dart';
-import '../catalogue/details/catalogue_details_title.dart';
-import '../catalogue/details/catalogue_details_genre.dart';
-import '../catalogue/details/catalogue_details_rating.dart';
+import '../catalogue/catalogue_product.dart';
+import '../catalogue/product/catalogue_product_fade.dart';
+import '../catalogue/product/catalogue_product_title.dart';
+import '../catalogue/product/catalogue_product_genre.dart';
+import '../catalogue/product/catalogue_product_rating.dart';
 
-class HomeTrendingMovie extends StatelessWidget {
-  const HomeTrendingMovie({
+class HomePopularMovie extends StatelessWidget {
+  const HomePopularMovie({
     required this.onSelectMovie,
     required this.image,
     required this.title,
@@ -17,55 +17,53 @@ class HomeTrendingMovie extends StatelessWidget {
   });
 
   final Future<void> Function() onSelectMovie;
-  final String rating;
   final String image;
   final String title;
   final String genre;
+  final String rating;
 
   @override
   Widget build(BuildContext context) {
-    return CatalogueDetails(
+    return CatalogueProduct(
       image: image,
-      shadowBlur: 10,
-      borderRadius: 0,
       onSelect: onSelectMovie,
       shadowColor: Colors.black45,
-      shadowOffset: const Offset(0, 5),
-      margin: const EdgeInsets.only(
-        bottom: 15,
-      ),
       layout: Stack(
         children: [
-          const CatalogueDetailsFade(
+          const CatalogueProductFade(
             height: 100,
           ),
           Padding(
             padding: const EdgeInsets.only(
-              bottom: 10,
-              right: 10,
-              left: 10,
+              left: 8,
+              right: 8,
+              bottom: 6.5,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CatalogueDetailsTitle(
+                CatalogueProductTitle(
                   title: title,
+                  fontSize: 16,
+                ),
+                const SizedBox(
+                  height: 2.5,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CatalogueDetailsGenre(
+                    CatalogueProductGenre(
                       genre: genre,
+                      fontSize: 16,
                     ),
-                    CatalogueDetailsRating(
+                    CatalogueProductRating(
                       rating: rating,
-                      iconSize: 24,
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),

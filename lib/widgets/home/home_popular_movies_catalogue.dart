@@ -4,10 +4,10 @@ import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_title.dart';
 
-import './movies/home_popular_movie.dart';
+import './products/home_popular_movie.dart';
 
-class HomePopularMovies extends StatelessWidget {
-  const HomePopularMovies({
+class HomePopularMoviesCatalogue extends StatelessWidget {
+  const HomePopularMoviesCatalogue({
     required this.popular,
     super.key,
   });

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CatalogueDetailsFade extends StatelessWidget {
-  const CatalogueDetailsFade({
+class CatalogueProductFade extends StatelessWidget {
+  const CatalogueProductFade({
     required this.height,
     super.key,
   });

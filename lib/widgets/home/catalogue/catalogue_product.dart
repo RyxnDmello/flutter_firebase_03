@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CatalogueDetails extends StatelessWidget {
-  const CatalogueDetails({
+class CatalogueProduct extends StatelessWidget {
+  const CatalogueProduct({
     required this.onSelect,
     required this.layout,
     required this.image,

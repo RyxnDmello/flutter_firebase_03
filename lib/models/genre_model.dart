@@ -67,7 +67,7 @@ const movieGenres = <GenreModel>[
   ),
   GenreModel(
     id: 878,
-    title: "Science Fiction",
+    title: "Fiction",
   ),
   GenreModel(
     id: 10770,
@@ -85,44 +85,9 @@ const movieGenres = <GenreModel>[
     id: 37,
     title: "Western",
   ),
-];
-
-const tvGenres = <GenreModel>[
-  GenreModel(
-    id: 10759,
-    title: "Action & Adventure",
-  ),
-  GenreModel(
-    id: 16,
-    title: "Animation",
-  ),
-  GenreModel(
-    id: 35,
-    title: "Comedy",
-  ),
-  GenreModel(
-    id: 80,
-    title: "Crime",
-  ),
-  GenreModel(
-    id: 99,
-    title: "Documentary",
-  ),
-  GenreModel(
-    id: 18,
-    title: "Drama",
-  ),
-  GenreModel(
-    id: 10751,
-    title: "Family",
-  ),
   GenreModel(
     id: 10762,
     title: "Kids",
-  ),
-  GenreModel(
-    id: 9648,
-    title: "Mystery",
   ),
   GenreModel(
     id: 10763,
@@ -134,22 +99,22 @@ const tvGenres = <GenreModel>[
   ),
   GenreModel(
     id: 10765,
-    title: "Sci-Fi & Fantasy",
+    title: "Sci-Fi",
   ),
   GenreModel(
     id: 10766,
     title: "Soap",
   ),
   GenreModel(
+    id: 10768,
+    title: "Politics",
+  ),
+  GenreModel(
     id: 10767,
     title: "Talk",
   ),
   GenreModel(
-    id: 10768,
-    title: "War & Politics",
-  ),
-  GenreModel(
-    id: 37,
-    title: "Western",
+    id: 10759,
+    title: "Action & Adventure",
   ),
 ];

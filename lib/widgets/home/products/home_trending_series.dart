@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../catalogue/catalogue_details.dart';
-import '../catalogue/details/catalogue_details_genre.dart';
-import '../catalogue/details/catalogue_details_rating.dart';
-import '../catalogue/details/catalogue_details_title.dart';
+import '../catalogue/catalogue_product.dart';
+import '../catalogue/product/catalogue_product_genre.dart';
+import '../catalogue/product/catalogue_product_rating.dart';
+import '../catalogue/product/catalogue_product_title.dart';
 
 class HomeTrendingSeries extends StatelessWidget {
   const HomeTrendingSeries({
@@ -25,7 +25,7 @@ class HomeTrendingSeries extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        CatalogueDetails(
+        CatalogueProduct(
           height: 300,
           image: image,
           layout: null,
@@ -69,7 +69,7 @@ class HomeTrendingSeries extends StatelessWidget {
                     padding: const EdgeInsets.only(
                       top: 5,
                     ),
-                    child: CatalogueDetailsTitle(
+                    child: CatalogueProductTitle(
                       title: title,
                     ),
                   ),
@@ -80,10 +80,10 @@ class HomeTrendingSeries extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      CatalogueDetailsGenre(
+                      CatalogueProductGenre(
                         genre: genre,
                       ),
-                      CatalogueDetailsRating(
+                      CatalogueProductRating(
                         rating: rating,
                       ),
                     ],

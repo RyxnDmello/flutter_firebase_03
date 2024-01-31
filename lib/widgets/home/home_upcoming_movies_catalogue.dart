@@ -5,10 +5,10 @@ import '../../models/catalogue/catalogue_product_model.dart';
 import './catalogue/catalogue_title.dart';
 import './catalogue/catalogue_tabs.dart';
 
-import './movies/home_upcoming_movie.dart';
+import './products/home_upcoming_movie.dart';
 
-class HomeUpcomingMovies extends StatefulWidget {
-  const HomeUpcomingMovies({
+class HomeUpcomingMoviesCatalogue extends StatefulWidget {
+  const HomeUpcomingMoviesCatalogue({
     required this.upcoming,
     super.key,
   });
@@ -16,11 +16,12 @@ class HomeUpcomingMovies extends StatefulWidget {
   final List<CatalogueProductModel> upcoming;
 
   @override
-  State<HomeUpcomingMovies> createState() => _HomeUpcomingMoviesState();
+  State<HomeUpcomingMoviesCatalogue> createState() =>
+      _HomeUpcomingMoviesCatalogueState();
 }
 
-class _HomeUpcomingMoviesState extends State<HomeUpcomingMovies>
-    with TickerProviderStateMixin {
+class _HomeUpcomingMoviesCatalogueState
+    extends State<HomeUpcomingMoviesCatalogue> with TickerProviderStateMixin {
   int _activePage = 0;
 
   void _onPageChanged(int nextPage) {

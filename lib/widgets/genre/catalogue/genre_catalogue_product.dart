@@ -41,7 +41,7 @@ class GenreCatalogueProduct extends StatelessWidget {
               blurRadius: 10,
             ),
           ],
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(10),
           color: Colors.black,
         ),
         child: Stack(

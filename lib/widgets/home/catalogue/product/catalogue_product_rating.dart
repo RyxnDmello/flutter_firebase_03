@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CatalogueDetailsRating extends StatelessWidget {
-  const CatalogueDetailsRating({
+class CatalogueProductRating extends StatelessWidget {
+  const CatalogueProductRating({
     required this.rating,
     this.fontSize = 18,
     this.iconSize = 20,

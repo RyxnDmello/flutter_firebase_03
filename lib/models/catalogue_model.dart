@@ -5,15 +5,15 @@ class CatalogueModel {
     required this.trendingMovies,
     required this.upcomingMovies,
     required this.popularMovies,
-    required this.trendingTV,
-    required this.popularTV,
+    required this.trendingSeries,
+    required this.popularSeries,
   });
 
   final List<CatalogueProductModel> trendingMovies;
   final List<CatalogueProductModel> upcomingMovies;
   final List<CatalogueProductModel> popularMovies;
-  final List<CatalogueProductModel> trendingTV;
-  final List<CatalogueProductModel> popularTV;
+  final List<CatalogueProductModel> trendingSeries;
+  final List<CatalogueProductModel> popularSeries;
 }
 
 const catalogues = CatalogueModel(
@@ -119,7 +119,7 @@ const catalogues = CatalogueModel(
       genres: ["Action", "Comedy", "Drama"],
     ),
   ],
-  trendingTV: [
+  trendingSeries: [
     CatalogueProductModel(
       id: 1,
       image: "/menEyCOdkjXqwpJy3cwOH8kfZrj.jpg",
@@ -145,7 +145,7 @@ const catalogues = CatalogueModel(
       genres: ["Action", "Comedy", "Drama"],
     ),
   ],
-  popularTV: [
+  popularSeries: [
     CatalogueProductModel(
       id: 1,
       image: "/shJhgNuC2a4hPdqvm8IDXFvYwLx.jpg",

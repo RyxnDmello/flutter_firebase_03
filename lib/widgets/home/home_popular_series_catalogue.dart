@@ -4,10 +4,10 @@ import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_title.dart';
 
-import './series/home_popular_series.dart';
+import './products/home_popular_series.dart';
 
-class HomePopularTV extends StatefulWidget {
-  const HomePopularTV({
+class HomePopularSeriesCatalogue extends StatefulWidget {
+  const HomePopularSeriesCatalogue({
     required this.popular,
     super.key,
   });
@@ -15,10 +15,12 @@ class HomePopularTV extends StatefulWidget {
   final List<CatalogueProductModel> popular;
 
   @override
-  State<HomePopularTV> createState() => _HomePopularTVState();
+  State<HomePopularSeriesCatalogue> createState() =>
+      _HomePopularSeriesCatalogueState();
 }
 
-class _HomePopularTVState extends State<HomePopularTV> {
+class _HomePopularSeriesCatalogueState
+    extends State<HomePopularSeriesCatalogue> {
   List<List<CatalogueProductModel>> _popular = [];
 
   @override
