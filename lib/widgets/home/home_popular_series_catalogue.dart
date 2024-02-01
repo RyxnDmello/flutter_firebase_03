@@ -57,6 +57,7 @@ class _HomePopularSeriesCatalogueState
       children: [
         const Padding(
           padding: EdgeInsets.only(
+            right: 15,
             left: 15,
           ),
           child: CatalogueTitle(

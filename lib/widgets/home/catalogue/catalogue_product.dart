@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class CatalogueProduct extends StatelessWidget {
   const CatalogueProduct({
@@ -12,6 +13,7 @@ class CatalogueProduct extends StatelessWidget {
     this.padding,
     this.margin,
     this.height,
+    this.width,
     super.key,
   });
 
@@ -23,6 +25,7 @@ class CatalogueProduct extends StatelessWidget {
   final Color shadowColor;
   final double shadowBlur;
   final double? height;
+  final double? width;
   final Widget? layout;
   final String image;
 
@@ -31,13 +34,14 @@ class CatalogueProduct extends StatelessWidget {
     return GestureDetector(
       onTap: onSelect,
       child: Container(
+        width: width,
         height: height,
         margin: margin,
         padding: padding,
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(image),
+            image: CachedNetworkImageProvider(image),
             fit: BoxFit.cover,
           ),
           boxShadow: [

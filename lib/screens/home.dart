@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/catalogue_model.dart';
+import '../models/person_model.dart';
 import '../models/genre_model.dart';
 
 import '../widgets/home/home_app_bar.dart';
@@ -9,6 +10,7 @@ import '../widgets/home/home_trending_series_catalogue.dart';
 import '../widgets/home/home_popular_series_catalogue.dart';
 import '../widgets/home/home_popular_movies_catalogue.dart';
 import '../widgets/home/home_upcoming_movies_catalogue.dart';
+import '../widgets/home/home_trending_people_catalogue.dart';
 import '../widgets/home/home_genres_catalogue.dart';
 
 import './genre.dart';
@@ -85,6 +87,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             HomePopularSeriesCatalogue(
               popular: catalogues.popularSeries,
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            HomeTrendingPeopleCatalogue(
+              people: people,
             ),
           ],
         ),
