@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_title.dart';
+import './catalogue/catalogue_explore.dart';
 import './catalogue/catalogue_tabs.dart';
 
 import './products/home_upcoming_movie.dart';
@@ -39,13 +40,22 @@ class _HomeUpcomingMoviesCatalogueState
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(
+          Padding(
+            padding: const EdgeInsets.only(
               right: 10,
               left: 10,
             ),
-            child: CatalogueTitle(
-              title: "Coming Soon",
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const CatalogueTitle(
+                  title: "UPCOMING MOVIES",
+                ),
+                CatalogueExplore(
+                  onExplore: () async {},
+                ),
+              ],
             ),
           ),
           const SizedBox(

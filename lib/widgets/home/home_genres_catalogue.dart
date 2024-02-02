@@ -43,7 +43,7 @@ class HomeGenresCatalogue extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const HomeGenresTitle(
-          title: "Genres",
+          title: "GENRES",
         ),
         const SizedBox(
           height: 5,

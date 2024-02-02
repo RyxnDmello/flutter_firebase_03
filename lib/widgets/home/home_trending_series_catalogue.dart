@@ -6,6 +6,7 @@ import './catalogue/catalogue_title.dart';
 import './catalogue/catalogue_tabs.dart';
 
 import './products/home_trending_series.dart';
+import 'catalogue/catalogue_explore.dart';
 
 class HomeTrendingSeriesCatalogue extends StatefulWidget {
   const HomeTrendingSeriesCatalogue({
@@ -34,13 +35,22 @@ class _HomeTrendingSeriesCatalogueState
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             right: 15,
             left: 15,
           ),
-          child: CatalogueTitle(
-            title: "Trending Series",
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CatalogueTitle(
+                title: "TRENDING SERIES",
+              ),
+              CatalogueExplore(
+                onExplore: () async {},
+              ),
+            ],
           ),
         ),
         const SizedBox(

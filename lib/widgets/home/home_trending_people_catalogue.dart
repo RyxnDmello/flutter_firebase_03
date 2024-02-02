@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/person_model.dart';
 
 import './catalogue/catalogue_title.dart';
+import './catalogue/catalogue_explore.dart';
 
 import './products/home_trending_person.dart';
 
@@ -20,17 +21,26 @@ class HomeTrendingPeopleCatalogue extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             right: 15,
             left: 15,
           ),
-          child: CatalogueTitle(
-            title: "Trending People",
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CatalogueTitle(
+                title: "TRENDING PEOPLE",
+              ),
+              CatalogueExplore(
+                onExplore: () async {},
+              ),
+            ],
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 5,
         ),
         SizedBox(
           height: 200,

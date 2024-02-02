@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_tabs.dart';
+import './catalogue/catalogue_explore.dart';
 
 import './products/home_trending_movie.dart';
 
@@ -57,18 +58,27 @@ class _HomeTrendingMoviesCatalogueState
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 8,
         ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CatalogueTabs(
-              pageLength: widget.trending.length,
-              activePage: _activePage,
-              vsync: this,
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 15,
+            right: 15,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CatalogueTabs(
+                pageLength: widget.trending.length,
+                activePage: _activePage,
+                vsync: this,
+              ),
+              CatalogueExplore(
+                onExplore: () async {},
+              ),
+            ],
+          ),
         ),
       ],
     );

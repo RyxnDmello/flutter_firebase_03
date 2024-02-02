@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_title.dart';
+import './catalogue/catalogue_explore.dart';
 
 import './products/home_popular_series.dart';
 
@@ -55,13 +56,22 @@ class _HomePopularSeriesCatalogueState
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             right: 15,
             left: 15,
           ),
-          child: CatalogueTitle(
-            title: "Popular Series",
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CatalogueTitle(
+                title: "POPULAR SERIES",
+              ),
+              CatalogueExplore(
+                onExplore: () async {},
+              ),
+            ],
           ),
         ),
         const SizedBox(

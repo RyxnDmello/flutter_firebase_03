@@ -65,31 +65,31 @@ class _HomeScreenState extends State<HomeScreen> {
               genres: movieGenres,
             ),
             const SizedBox(
-              height: 25,
+              height: 30,
             ),
             HomeUpcomingMoviesCatalogue(
               upcoming: catalogues.upcomingMovies,
             ),
             const SizedBox(
-              height: 25,
+              height: 30,
             ),
             HomePopularMoviesCatalogue(
               popular: catalogues.popularMovies,
             ),
             const SizedBox(
-              height: 25,
+              height: 40,
             ),
             HomeTrendingSeriesCatalogue(
               trending: catalogues.trendingSeries,
             ),
             const SizedBox(
-              height: 25,
+              height: 30,
             ),
             HomePopularSeriesCatalogue(
               popular: catalogues.popularSeries,
             ),
             const SizedBox(
-              height: 25,
+              height: 40,
             ),
             HomeTrendingPeopleCatalogue(
               people: people,

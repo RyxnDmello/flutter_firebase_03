@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/catalogue/catalogue_product_model.dart';
 
 import './catalogue/catalogue_title.dart';
+import './catalogue/catalogue_explore.dart';
 
 import './products/home_popular_movie.dart';
 
@@ -25,8 +26,17 @@ class HomePopularMoviesCatalogue extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CatalogueTitle(
-            title: "Popular Movies",
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CatalogueTitle(
+                title: "POPULAR MOVIES",
+              ),
+              CatalogueExplore(
+                onExplore: () async {},
+              ),
+            ],
           ),
           const SizedBox(
             height: 10,

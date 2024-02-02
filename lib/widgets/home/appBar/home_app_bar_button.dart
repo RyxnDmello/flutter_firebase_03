@@ -17,7 +17,7 @@ class HomeAppBarButton extends StatelessWidget {
       style: IconButton.styleFrom(
         padding: const EdgeInsets.all(10),
         backgroundColor: Colors.black45,
-        highlightColor: Colors.black,
+        highlightColor: Colors.black38,
         iconSize: 25,
       ),
       icon: Icon(
