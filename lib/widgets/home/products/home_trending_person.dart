@@ -23,7 +23,6 @@ class HomeTrendingPerson extends StatelessWidget {
     return CatalogueProduct(
       onSelect: () async {},
       shadowColor: Colors.black45,
-      borderRadius: 10,
       image: image,
       width: 150,
       layout: Stack(

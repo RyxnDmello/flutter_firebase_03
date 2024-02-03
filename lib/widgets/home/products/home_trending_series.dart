@@ -47,8 +47,8 @@ class HomeTrendingSeries extends StatelessWidget {
               ),
               margin: const EdgeInsets.only(
                 bottom: 15,
-                right: 20,
-                left: 20,
+                right: 15,
+                left: 15,
               ),
               decoration: BoxDecoration(
                 boxShadow: const [

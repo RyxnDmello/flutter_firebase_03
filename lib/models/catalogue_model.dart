@@ -5,6 +5,7 @@ class CatalogueModel {
     required this.trendingMovies,
     required this.upcomingMovies,
     required this.popularMovies,
+    required this.topRatedMovies,
     required this.trendingSeries,
     required this.popularSeries,
   });
@@ -12,6 +13,7 @@ class CatalogueModel {
   final List<CatalogueProductModel> trendingMovies;
   final List<CatalogueProductModel> upcomingMovies;
   final List<CatalogueProductModel> popularMovies;
+  final List<CatalogueProductModel> topRatedMovies;
   final List<CatalogueProductModel> trendingSeries;
   final List<CatalogueProductModel> popularSeries;
 }
@@ -115,6 +117,40 @@ const catalogues = CatalogueModel(
       image: "/yl2GfeCaPoxChcGyM5p7vYp1CKS.jpg",
       title: "Role Play",
       rating: "7.8",
+      language: "English",
+      genres: ["Action", "Comedy", "Drama"],
+    ),
+  ],
+  topRatedMovies: [
+    CatalogueProductModel(
+      id: 1,
+      image: "/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg",
+      title: "The Dark Knight",
+      rating: "8.572",
+      language: "English",
+      genres: ["Action", "Comedy", "Drama"],
+    ),
+    CatalogueProductModel(
+      id: 1,
+      image: "/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+      title: "The Shawshank Redemption",
+      rating: "8.711",
+      language: "English",
+      genres: ["Action", "Comedy", "Drama"],
+    ),
+    CatalogueProductModel(
+      id: 1,
+      image: "/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg",
+      title: "The Godfather",
+      rating: "8.711",
+      language: "English",
+      genres: ["Action", "Comedy", "Drama"],
+    ),
+    CatalogueProductModel(
+      id: 1,
+      image: "/3f92DMBTFqr3wgXpfxzrb0qv8nG.jpg",
+      title: "Schindler's List",
+      rating: "8.572",
       language: "English",
       genres: ["Action", "Comedy", "Drama"],
     ),
