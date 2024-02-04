@@ -12,6 +12,7 @@ import '../widgets/home/home_popular_movies_catalogue.dart';
 import '../widgets/home/home_popular_series_catalogue.dart';
 import '../widgets/home/home_upcoming_movies_catalogue.dart';
 import '../widgets/home/home_top_movies_catalogue.dart';
+import '../widgets/home/home_collection_button.dart';
 import '../widgets/home/home_genres_catalogue.dart';
 
 import './genre.dart';
@@ -64,6 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
             HomeGenresCatalogue(
               onSelectGenre: _openGenreScreen,
               genres: movieGenres,
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            HomeCollectionButton(
+              onTap: () {},
+              label: "MY COLLECTIONS",
             ),
             const SizedBox(
               height: 30,

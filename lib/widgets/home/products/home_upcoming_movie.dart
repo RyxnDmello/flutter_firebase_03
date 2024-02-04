@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../catalogue/catalogue_icon.dart';
 import '../catalogue/catalogue_product.dart';
 import '../catalogue/product/catalogue_product_fade.dart';
 import '../catalogue/product/catalogue_product_title.dart';
@@ -63,6 +64,9 @@ class HomeUpcomingMovie extends StatelessWidget {
                 )
               ],
             ),
+          ),
+          const CatalogueIcon(
+            size: 35,
           ),
         ],
       ),

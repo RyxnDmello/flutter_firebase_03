@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../catalogue/catalogue_icon.dart';
 import '../catalogue/catalogue_product.dart';
 import '../catalogue/product/catalogue_product_fade.dart';
 import '../catalogue/product/catalogue_product_title.dart';
@@ -47,14 +48,8 @@ class HomeTrendingPerson extends StatelessWidget {
               ],
             ),
           ),
-          const Positioned(
-            top: 10,
-            right: 10,
-            child: Icon(
-              Icons.open_in_new_outlined,
-              color: Colors.white54,
-              size: 25,
-            ),
+          const CatalogueIcon(
+            size: 28,
           ),
         ],
       ),

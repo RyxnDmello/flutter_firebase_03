@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../catalogue/catalogue_icon.dart';
 import '../catalogue/catalogue_product.dart';
 import '../catalogue/product/catalogue_product_genre.dart';
 import '../catalogue/product/catalogue_product_rating.dart';
@@ -92,7 +93,10 @@ class HomeTrendingSeries extends StatelessWidget {
               ),
             ),
           ],
-        )
+        ),
+        const CatalogueIcon(
+          size: 40,
+        ),
       ],
     );
   }

@@ -40,5 +40,3 @@ flutter:
     - ./lib/images/register/providers/
     - ./lib/images/register/avatars/
     - ./lib/images/register/modal/
-
-    - ./lib/images/home/buttons/

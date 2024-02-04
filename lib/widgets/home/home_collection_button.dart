@@ -3,19 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class HomeCollectionButton extends StatelessWidget {
   const HomeCollectionButton({
-    required this.isSolid,
     required this.onTap,
     required this.label,
-    required this.image,
-    required this.color,
     super.key,
   });
 
   final void Function() onTap;
-  final bool isSolid;
-  final String image;
   final String label;
-  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +28,7 @@ class HomeCollectionButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
-          side: !isSolid
-              ? BorderSide(
-                  color: color,
-                  width: 2.5,
-                )
-              : null,
-          backgroundColor: isSolid ? color : null,
+          backgroundColor: const Color.fromARGB(255, 0, 0, 50),
           shadowColor: Colors.black,
           elevation: 1,
         ),
@@ -49,19 +37,18 @@ class HomeCollectionButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              image,
-              width: 26,
+              "./lib/images/home/collection.png",
               fit: BoxFit.cover,
-              color: isSolid ? Colors.white : color,
+              width: 22.5,
             ),
             const SizedBox(
-              width: 8,
+              width: 10,
             ),
             Text(
               label,
               style: GoogleFonts.montserrat(
-                fontWeight: isSolid ? FontWeight.w500 : FontWeight.w600,
-                color: isSolid ? Colors.white : color,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
                 fontSize: 20,
               ),
             ),
