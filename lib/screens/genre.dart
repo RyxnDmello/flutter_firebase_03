@@ -26,16 +26,35 @@ class GenreScreen extends StatefulWidget {
 
 class _GenreScreenState extends State<GenreScreen> {
   List<CatalogueProductModel> _movies = [];
+  String _background = "";
 
   @override
   void initState() {
     super.initState();
-    _movies = widget.movies;
+
+    _movies = _defaultCatalogue();
+    _background = widget.movies.first.imageURI;
+  }
+
+  List<CatalogueProductModel> _defaultCatalogue() {
+    List<CatalogueProductModel> catalogue = [];
+
+    for (final entry in widget.movies.asMap().entries) {
+      if (entry.key == 0) continue;
+      catalogue.add(entry.value);
+    }
+
+    catalogue.add(widget.movies.first);
+    return catalogue;
   }
 
   void _search({required String? input}) {
     if (input == null || input.isEmpty) {
-      setState(() => _movies = widget.movies);
+      setState(() {
+        _movies = _defaultCatalogue();
+        _background = widget.movies.first.imageURI;
+      });
+
       return;
     }
 
@@ -46,7 +65,10 @@ class _GenreScreenState extends State<GenreScreen> {
       filteredMovies.add(movie);
     }
 
-    setState(() => _movies = filteredMovies);
+    setState(() {
+      _movies = filteredMovies;
+      _background = _movies.first.imageURI;
+    });
   }
 
   void _closeGenreScreen() {
@@ -62,7 +84,8 @@ class _GenreScreenState extends State<GenreScreen> {
         ),
         child: Stack(
           children: [
-            const GenreBackground(
+            GenreBackground(
+              background: _background,
               height: 400,
             ),
             Column(

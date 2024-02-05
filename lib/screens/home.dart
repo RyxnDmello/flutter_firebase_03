@@ -12,6 +12,7 @@ import '../widgets/home/home_popular_movies_catalogue.dart';
 import '../widgets/home/home_popular_series_catalogue.dart';
 import '../widgets/home/home_upcoming_movies_catalogue.dart';
 import '../widgets/home/home_top_movies_catalogue.dart';
+import '../widgets/home/home_top_series_catalogue.dart';
 import '../widgets/home/home_collection_button.dart';
 import '../widgets/home/home_genres_catalogue.dart';
 
@@ -107,6 +108,12 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 30,
             ),
             HomeTopMoviesCatalogue(
+              tops: catalogues.topRatedMovies,
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            HomeTopSeriesCatalogue(
               tops: catalogues.topRatedMovies,
             ),
           ],

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class GenreBackground extends StatelessWidget {
   const GenreBackground({
+    required this.background,
     required this.height,
     super.key,
   });
 
+  final String background;
   final double height;
 
   @override
@@ -16,19 +19,24 @@ class GenreBackground extends StatelessWidget {
         horizontal: 10,
         vertical: 15,
       ),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: CachedNetworkImageProvider(background),
+          fit: BoxFit.cover,
+          opacity: 0.8,
+        ),
+        borderRadius: const BorderRadius.only(
           bottomRight: Radius.elliptical(20, 10),
           bottomLeft: Radius.elliptical(20, 10),
         ),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black45,
             offset: Offset(0, 5),
             blurRadius: 10,
           ),
         ],
-        color: Color.fromARGB(255, 0, 0, 50),
+        color: Colors.black,
       ),
     );
   }

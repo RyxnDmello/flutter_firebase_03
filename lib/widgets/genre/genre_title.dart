@@ -15,7 +15,7 @@ class GenreTitle extends StatelessWidget {
       "$title Movies",
       textAlign: TextAlign.center,
       style: GoogleFonts.montserrat(
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w500,
         color: Colors.white,
         fontSize: 35,
       ),

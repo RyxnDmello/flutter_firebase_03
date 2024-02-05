@@ -57,7 +57,7 @@ class GenreSearch extends StatelessWidget {
             borderRadius: BorderRadius.circular(40),
             borderSide: BorderSide.none,
           ),
-          fillColor: Colors.white12,
+          fillColor: Colors.black45,
           filled: true,
         ),
       ),
