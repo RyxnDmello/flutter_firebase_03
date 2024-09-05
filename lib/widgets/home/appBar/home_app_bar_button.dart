@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 class HomeAppBarButton extends StatelessWidget {
   const HomeAppBarButton({
-    required this.onOpen,
+    required this.onTap,
     required this.icon,
     super.key,
   });
 
-  final void Function() onOpen;
+  final void Function() onTap;
   final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return IconButton.filled(
-      onPressed: onOpen,
+      onPressed: onTap,
       style: IconButton.styleFrom(
         padding: const EdgeInsets.all(10),
         backgroundColor: Colors.black45,

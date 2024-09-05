@@ -38,21 +38,21 @@ class HomeAppBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 HomeAppBarButton(
-                  onOpen: () {},
+                  onTap: () {},
                   icon: Icons.share_outlined,
                 ),
                 const SizedBox(
                   width: 5,
                 ),
                 HomeAppBarButton(
-                  onOpen: () {},
+                  onTap: () {},
                   icon: Icons.favorite_outline,
                 ),
                 const SizedBox(
                   width: 5,
                 ),
                 HomeAppBarButton(
-                  onOpen: () {},
+                  onTap: () {},
                   icon: Icons.search_outlined,
                 ),
               ],
